@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import WeatherCard from './Weather';
+import CodeCard from './codeCard';
 
 // example class based component (smart component)
 class App extends Component {
@@ -10,9 +12,16 @@ class App extends Component {
   }
 
   render() {
+    let cardFlexStyle = {
+      display: 'flex',
+      justifyContent: 'space-around',
+      flexWrap: 'wrap',
+    };
+
     return (
-      <div>
-        {this.props.children}
+      <div style={cardFlexStyle}>
+        <WeatherCard />
+        <CodeCard />
       </div>
     );
   }
