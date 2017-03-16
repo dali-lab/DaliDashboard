@@ -39,7 +39,12 @@ body {
   ul {
    list-style: none;
    padding: 0px;
+   padding-top: 15px;
    margin: 0px;
+ }
+
+ #events {
+   padding-top: 25px;
  }
 
   margin-top: 20px;
@@ -87,7 +92,7 @@ body {
   align-items: center;
   display: flex;
 
-  padding: 20px 0px 0px 0px;
+  padding: 10px 0px 10px 0px;
 
   img {
     margin-right: 20px;
@@ -96,4 +101,28 @@ body {
     height: 60px;
     object-fit: cover;
   }
+}
+
+.eventListItem {
+
+  display: flex;
+  flex-direction: row;
+
+  i { font-size: 20px; }
+
+  .eventDayTime {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width: 25%;
+    border-right: thin solid $title-color;
+    text-align: right;
+    padding-right: 20px;
+  }
+
+  .eventText {
+    padding-top: 10px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+  }
+
 }
