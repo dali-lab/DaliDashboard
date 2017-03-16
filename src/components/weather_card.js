@@ -50,14 +50,14 @@ class WeatherCard extends Component {
 
     return (
       <div className="card" style={weatherStyle}>
-          <h2>icon goes here</h2>
+        <h3>icon</h3>
           {/* <i class="wi wi-night-sleet"> </i>*/}
-          <h1> {this.state.current_temp} </h1>
-          <h3> {this.state.city} </h3>
-          <div className="cardBottom">
-            <p> {this.state.current_weather} </p>
-            <p> {this.state.sunrise} / {this.state.sunset} </p>
-          </div>
+        <h1> {this.state.current_temp} </h1>
+        <h3> {this.state.city} </h3>
+        <div className="cardBottom">
+          <p> {this.state.current_weather} </p>
+          <p> {this.state.sunrise} / {this.state.sunset} </p>
+        </div>
       </div>
     );
   }
