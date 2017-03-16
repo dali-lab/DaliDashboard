@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import WeatherCard from './weather_card';
 import CodeCard from './code_card';
+import ActivityList from './activity_list';
 
 // example class based component (smart component)
 class App extends Component {
@@ -8,20 +9,23 @@ class App extends Component {
     super(props);
 
     // init component state here
-    this.state = {};
+    this.state = {
+      activities: [1, 2, 3],
+    };
   }
 
   render() {
-    let cardFlexStyle = {
-      display: 'flex',
-      justifyContent: 'space-around',
-    };
-
     return (
-      <div style={cardFlexStyle}>
-        <WeatherCard />
-        <CodeCard />
-        <CodeCard />
+      <div>
+        <div>
+          <ActivityList activities={this.state.activities} />
+        </div>
+        <div className="header_cards">
+          <WeatherCard />
+          <CodeCard />
+          <CodeCard />
+        </div>
+
       </div>
     );
   }

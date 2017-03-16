@@ -1,46 +1,99 @@
 $mat-green: #CDDA49;
+$title-color: #424242;
+$subtitle-color: #A3A1A1;
 
 body {
   font-family: "Roboto", sans-serif;
-  color: rgb(10%, 10%, 10%);
+  color: $title-color;
   background: darken(white, 10%);
   margin: 20px;
-}
-h1 { font-size: 70px; }
-h2 { font-size: 55px; }
-h3 { font-size: 32px; }
-h4 { font-size: 16px; }
 
-.card {
-  color: white;
+  h1 { font-size: 70px; }
+  h2 { font-size: 55px; }
+  h3 { font-size: 32px; }
+  h4 { font-size: 20px; }
+
+  h1, h2, h3, h4, p {
+    margin: 0px;
+    font-weight: 300;
+    text-transform: capitalize;
+  }
+
+  #title {
+    font-weight: 400;
+  }
+
+  #subtitle {
+    color: $subtitle-color;
+    text-transform: none;
+  }
+}
+
+
+
+.main_card {
   box-shadow: -3px 3px 0px #C9C9C9;
-  width: 30%;
-  min-width: 250px;
-  max-width: 350px;
+  background-color: white;
+  padding: 20px 20px 20px 30px;
+
+  ul {
+   list-style: none;
+   padding: 0px;
+   margin: 0px;
+ }
+
+  margin-top: 20px;
+  margin-bottom: 20px;
+
+}
+
+.header_cards {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.header_card {
+  color: white;
+  width: 300px;
+  box-shadow: -3px 3px 0px #C9C9C9;
   padding: 10px 10px 10px 10px;
 
   text-align: center;
-  display: flex;
-  flex-direction: column;
-  margin: 0px 20px 0px 20px;
-}
-.card h1, h2, h3, h4, p {
-  margin: 0px;
-  font-weight: 300;
-  text-transform: capitalize;
-}
+  margin: 0px 20px 20px 20px;
 
+  i {
+    font-size: 90px;
+    margin: 20px 0px 30px 0px;
+  }
 
-.cardBottom {
-  padding: 10px;
-  margin-top: 20px;
-  background-color: rgba(0, 0, 0, .075);
-  margin-top: auto;
-}
-.cardBottom p {
-  margin: 3px;
+  .cardTop {
+  }
+
+  .cardBottom {
+    padding: 10px;
+    margin-top: 10px;
+    background-color: rgba(0, 0, 0, .075);
+    p { margin: 3px; }
+  }
 }
 
 #code_card h3 {
   padding-top: 15px;
+}
+
+.activityListItem {
+  align-items: center;
+  display: flex;
+
+  padding: 20px 0px 0px 0px;
+
+  img {
+    margin-right: 20px;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+  }
 }
