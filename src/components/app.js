@@ -3,6 +3,7 @@ import WeatherCard from './weather_card';
 import CodeCard from './code_card';
 import ActivityList from './activity_list';
 import EventList from './events_list';
+import LeaderBoard from './leaderboard_chart';
 
 // example class based component (smart component)
 class App extends Component {
@@ -18,6 +19,7 @@ class App extends Component {
   render() {
     return (
       <div>
+        <LeaderBoard />
         <div className="feed_cards">
           <ActivityList activities={this.state.activities} />
           <EventList events={this.state.activities} />

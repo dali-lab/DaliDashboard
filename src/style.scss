@@ -43,6 +43,8 @@ body {
    margin: 0px;
  }
 
+ min-width: 500px;
+
  #events {
    padding-top: 25px;
  }
@@ -99,7 +101,6 @@ body {
   .main_card {
     width: 40%;
     margin: 20px 10px 20px 10px;
-    min-width: 500px;
   }
 
 }
@@ -142,4 +143,28 @@ body {
     padding-left: 20px;
   }
 
+}
+
+.leaderboard {
+  display: flex;
+}
+
+.ct-chart .ct-bar {
+  stroke-width: 20px;
+}
+
+.ct-chart .ct-bar:nth-of-type(4n+1) {
+  stroke: #71A28A;
+}
+
+.ct-chart .ct-bar:nth-of-type(4n+2) {
+  stroke: #FF6414;
+}
+
+.ct-chart .ct-bar:nth-of-type(4n+3) {
+  stroke: #EFB200;
+}
+
+.ct-chart .ct-bar:nth-of-type(4n+4) {
+  stroke: #91A453;
 }
