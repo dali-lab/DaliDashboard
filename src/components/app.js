@@ -18,7 +18,7 @@ class App extends Component {
   render() {
     return (
       <div>
-        <div>
+        <div className="feed_cards">
           <ActivityList activities={this.state.activities} />
           <EventList events={this.state.activities} />
         </div>
@@ -27,7 +27,6 @@ class App extends Component {
           <CodeCard />
           <CodeCard />
         </div>
-
       </div>
     );
   }

@@ -9,8 +9,8 @@ const EventList = (props) => {
 
   return (
     <div className="main_card">
-      <h4 id="title"> Activity List </h4>
-      <p id="subtitle"> See what Dali members have been up to recently! </p>
+      <h4 id="title"> Upcoming Events </h4>
+      <p id="subtitle"> Here's wha's happening in the lab </p>
       <ul id="events">
         {eventsItems}
       </ul>

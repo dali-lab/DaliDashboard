@@ -5,7 +5,7 @@ import React, {
 let codeCardStyle = {
   backgroundColor: '#209A8E',
   textAlign: 'left',
-  paddingLeft: '15',
+  paddingLeft: '15px',
 };
 
 class CodeCard extends Component {

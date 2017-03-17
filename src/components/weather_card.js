@@ -2,6 +2,7 @@ import React, {
   Component,
 } from 'react';
 import weatherZipSearch from './weather-api';
+import weatherIcons from '../../Assets/weatherIcons.json';
 
 let weatherStyle = {
   backgroundColor: '#CDDA49',
@@ -17,6 +18,7 @@ class WeatherCard extends Component {
       city: '...',
       sunrise: '...',
       sunset: '...',
+      icon: '....',
     };
     this.getWeather();
   }
@@ -29,8 +31,22 @@ class WeatherCard extends Component {
         current_temp: `${this.roundTemp(weatherData.main.temp)} F`,
         sunrise: `Sunrise: ${this.convertTime(weatherData.sys.sunrise)}`,
         sunset: `Sunset: ${this.convertTime(weatherData.sys.sunset)}`,
+        icon: this.setIcon(weatherData),
       });
     });
+  }
+
+  setIcon(resp) {
+    const prefix = 'wi wi-';
+    const code = resp.weather[0].id;
+    let icon = weatherIcons[code].icon;
+
+    // If we are not in the ranges mentioned above, add a day/night prefix.
+    if (!(code > 699 && code < 800) && !(code > 899 && code < 1000)) {
+      icon = 'day-' + icon;
+    }
+    // Finally tack on the prefix.
+    return prefix + icon;
   }
 
   roundTemp(temp) {
@@ -50,7 +66,7 @@ class WeatherCard extends Component {
     return (
       <div className="header_card" style={weatherStyle}>
         <div className="cardTop">
-          <i className="wi wi-night-sleet"> </i>
+          <i className={this.state.icon}> </i>
           <h2> {this.state.current_temp} </h2>
           <h4> {this.state.city} </h4>
         </div>
