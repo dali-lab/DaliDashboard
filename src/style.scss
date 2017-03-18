@@ -1,3 +1,6 @@
+@import "node_modules/react-image-gallery/styles/scss/image-gallery.scss";
+
+
 $mat-green: #CDDA49;
 $title-color: #424242;
 $subtitle-color: #A3A1A1;
@@ -28,8 +31,6 @@ body {
     text-transform: none;
   }
 }
-
-
 
 .main_card {
   box-shadow: -3px 3px 0px #C9C9C9;
@@ -128,13 +129,11 @@ body {
   i { font-size: 20px; }
 
   .eventDayTime {
-    padding-top: 10px;
-    padding-bottom: 10px;
     width: 25%;
     min-width: 80px;
     border-right: thin solid $title-color;
     text-align: right;
-    padding-right: 20px;
+    padding: 10px;
   }
 
   .eventText {
@@ -146,7 +145,6 @@ body {
 }
 
 .leaderboard {
-  display: flex;
 }
 
 .ct-chart .ct-bar {

@@ -35,14 +35,6 @@ class CodeCard extends Component {
           <h3> {this.state.milestones} </h3>
           <h4> Milestones Reached </h4>
         </div>
-        <div>
-          <h3> {this.state.lines} </h3>
-          <h4> Lines of code </h4>
-        </div>
-        <div>
-          <h3> {this.state.milestones} </h3>
-          <h4> Milestones Reached </h4>
-        </div>
       </div>
     );
   }
