@@ -1,9 +1,12 @@
 @import "node_modules/react-image-gallery/styles/scss/image-gallery.scss";
 
-
 $mat-green: #CDDA49;
 $title-color: #424242;
 $subtitle-color: #A3A1A1;
+
+$mat-blue: #1FBCD2;
+$mat-purple: #9575CD;
+$mat-orange: #FF9E00;
 
 body {
   font-family: "Roboto", sans-serif;
@@ -147,22 +150,66 @@ body {
 .leaderboard {
 }
 
+#gallery_card {
+  display: flex;
+  max-width: 51%;
+}
+
+.project_card {
+  max-width: 35%;
+  #top {
+    padding: 25px;
+    color: white;
+    background-color: $mat-blue;
+    p {
+      font-size: 14px;
+      margin-top: 15px;
+    }
+  }
+  #bottom {
+    padding: 25px 25px 10px 25px;
+    color: $title-color;
+    background-color: white;
+
+    p {
+      margin-bottom: 15px;
+    }
+
+    ul {
+      display: flex;
+      list-style: none;
+      padding-left: 0px;
+      margin-bottom: 0px;
+    }
+  }
+}
+
+.user_circle {
+  img {
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    object-fit: cover;
+    background-size: contain;
+  }
+}
+
 .ct-chart .ct-bar {
   stroke-width: 20px;
 }
-
 .ct-chart .ct-bar:nth-of-type(4n+1) {
-  stroke: #71A28A;
+  stroke: $mat-blue;
 }
 
 .ct-chart .ct-bar:nth-of-type(4n+2) {
-  stroke: #FF6414;
+  stroke: $mat-purple;
 }
 
 .ct-chart .ct-bar:nth-of-type(4n+3) {
-  stroke: #EFB200;
+  stroke: $mat-orange;
 }
 
 .ct-chart .ct-bar:nth-of-type(4n+4) {
-  stroke: #91A453;
+  stroke: $mat-green;
 }
