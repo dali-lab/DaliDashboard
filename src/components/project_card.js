@@ -18,7 +18,7 @@ class ProjectCard extends Component {
           <p> React-Native - Express - Sketch </p>
         </div>
         <div id="bottom">
-          <p> description </p>
+          <p> a multiline description blah blah alsjdf lskj woefj woij flskdjf lj </p>
           <ProjectUserList users={this.state.users} />
         </div>
       </div>

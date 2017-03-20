@@ -47,8 +47,6 @@ body {
    margin: 0px;
  }
 
- min-width: 500px;
-
  #events {
    padding-top: 25px;
  }
@@ -178,13 +176,14 @@ body {
     ul {
       display: flex;
       list-style: none;
-      padding-left: 0px;
+      padding-left: 10px;
       margin-bottom: 0px;
     }
   }
 }
 
 .user_circle {
+  margin-left: -10px;
   img {
     cursor: pointer;
     width: 30px;
@@ -192,6 +191,26 @@ body {
     border-radius: 50%;
     object-fit: cover;
     background-size: contain;
+  }
+}
+
+#pill {
+  border-radius: 80px;
+  max-width: 250px;
+  box-shadow: none;
+  padding-top: 10px;
+  padding: 20px;
+}
+
+#user_card {
+  display: flex;
+  align-items: center;
+  img {
+    margin-right: 20px;
+    border-radius: 50%;
+    width: 70px;
+    height: 70px;
+    object-fit: cover;
   }
 }
 
