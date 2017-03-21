@@ -11,19 +11,12 @@ class EventsListItem extends Component {
       time: '5:30 PM',
       date: 'Wed 2/1',
       icon: 'face',
-      type: 'workshop',
+      type: 'meeting',
     };
   }
 
   render() {
-    let titleColor;
-    if (this.state.type === 'meeting') {
-      titleColor = { color: '#fff000' };
-    } else if (this.state.type === 'workshop') {
-      titleColor = { color: 'blue' };
-    } else {
-      titleColor = { color: '#000000' };
-    }
+    const classId = this.state.type === 'meeting' ? 'meeting' : '';
 
     return (
       <li className="eventListItem">
@@ -33,7 +26,7 @@ class EventsListItem extends Component {
           <p> {this.state.date} </p>
         </div>
         <div className="eventText">
-          <h4 id="title" style={titleColor}> {this.state.title} </h4>
+          <h4 className={classId} id="title"> {this.state.title} </h4>
           <p id="subtitle"> {this.state.subtitle} </p>
         </div>
       </li>

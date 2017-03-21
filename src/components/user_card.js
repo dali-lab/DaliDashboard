@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 
 const studentJson = {
   students: [{
-    name: 'Armin',
+    name: 'Armin Mahban',
     year: '17',
-    skills: ['React', 'Sketch'],
+    skills: ['React', 'Sketch', 'Photoshop', 'Xcode', 'Android Studio', 'Unity'],
     hometown: 'Washington, DC',
     imgUrl: 'http://cdn1-www.dogtime.com/assets/uploads/gallery/30-impossibly-cute-puppies/impossibly-cute-puppy-2.jpg',
   },
@@ -12,9 +12,6 @@ const studentJson = {
 };
 
 class UserCard extends Component {
-  constructor(props) {
-    super(props);
-  }
 
   render() {
     const student = studentJson.students[0];
@@ -25,13 +22,12 @@ class UserCard extends Component {
         </div>
         <div>
           <h4 id="title"> {student.name} </h4>
-          <p id="subtitle"> {student.hometown} </p>
-          <p id="subtitle"> {student.year} </p>
+          <p id="detail"> {student.hometown} </p>
+          <p id="detail"> {student.skills.join(' - ')} </p>
         </div>
       </div>
     );
   }
-
 }
 
 export default UserCard;
