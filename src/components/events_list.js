@@ -3,8 +3,8 @@ import EventsListItem from './events_list_item';
 
 
 const EventList = (props) => {
-  const eventsItems = props.events.map((event) => {
-    return <EventsListItem />;
+  const eventsItems = props.events.map((event, index) => {
+    return <EventsListItem key={index} />;
   });
 
   return (

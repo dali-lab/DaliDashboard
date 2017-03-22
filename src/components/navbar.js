@@ -15,7 +15,7 @@ class NavBar extends Component {
 
   createNavItems(navPages) {
     const navItems = pages.map((page, index) => {
-      return <NavItem title={page} index={index} selected={this.state.selectedIndex} changeSelected={(newIndex) => this.setState({ selectedIndex: index })} />;
+      return <NavItem key={index} title={page} index={index} link="/members" selected={this.state.selectedIndex} changeSelected={(newIndex) => this.setState({ selectedIndex: index })} />;
     });
     return navItems;
   }

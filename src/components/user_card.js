@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import Link from 'react-router';
+import Ink from 'react-ink';
 
 const studentJson = {
   students: [{
@@ -16,7 +18,8 @@ class UserCard extends Component {
   render() {
     const student = studentJson.students[0];
     return (
-      <div className="user_card">
+      <div className="main_card user_card pill ink">
+        <Ink />
         <div>
           <img src={student.imgUrl} alt="profile" />
         </div>

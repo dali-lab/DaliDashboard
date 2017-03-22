@@ -7,8 +7,6 @@ import LeaderBoard from './leaderboard_chart';
 import Gallery from './gallery_card';
 import ProjectCard from './project_card';
 import UserCard from './user_card';
-import NavBar from './navbar';
-import Ink from 'react-ink';
 
 
 // example class based component (smart component)
@@ -25,13 +23,7 @@ class App extends Component {
   render() {
     return (
       <div>
-        <div className="nav_bar">
-          <NavBar />
-        </div>
-        <div className="main_card pill ink">
-          <Ink />
-          <UserCard />
-        </div>
+        <UserCard />
         <ProjectCard />
         <div>
           <LeaderBoard />

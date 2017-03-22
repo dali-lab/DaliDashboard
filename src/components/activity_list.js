@@ -3,8 +3,8 @@ import ActivityListItem from './activity_list_item';
 
 
 const ActivityList = (props) => {
-  const activityItems = props.activities.map((activity) => {
-    return <ActivityListItem />;
+  const activityItems = props.activities.map((activity, index) => {
+    return <ActivityListItem key={index} />;
   });
 
   return (
