@@ -19,13 +19,13 @@ class EventsListItem extends Component {
     const classId = this.state.type === 'meeting' ? 'meeting' : '';
 
     return (
-      <li className="eventListItem">
-        <div className="eventDayTime">
+      <li className="event_list_item">
+        <div className="event_day_time">
           <i className="material-icons">{this.state.icon}</i>
           <h4> {this.state.time} </h4>
           <p> {this.state.date} </p>
         </div>
-        <div className="eventText">
+        <div className="event_text">
           <h4 className={classId} id="title"> {this.state.title} </h4>
           <p id="subtitle"> {this.state.subtitle} </p>
         </div>

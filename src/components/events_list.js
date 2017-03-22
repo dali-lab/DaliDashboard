@@ -11,7 +11,7 @@ const EventList = (props) => {
     <div className="main_card">
       <h4 id="title"> Upcoming Events </h4>
       <p id="subtitle"> Here's what's happening in the lab </p>
-      <ul id="events">
+      <ul>
         {eventsItems}
       </ul>
     </div>

@@ -1,0 +1,17 @@
+.ct-chart {
+  .ct-bar {
+   stroke-width: 20px;
+ }
+ .ct-bar:nth-of-type(4n+1) {
+   stroke: $mat-blue;
+ }
+ .ct-bar:nth-of-type(4n+2) {
+   stroke: $mat-purple;
+ }
+ .ct-bar:nth-of-type(4n+3) {
+   stroke: $mat-orange;
+ }
+ .ct-bar:nth-of-type(4n+4) {
+   stroke: $mat-green;
+ }
+}

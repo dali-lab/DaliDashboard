@@ -1,0 +1,29 @@
+.header_card {
+  color: white;
+  width: 300px;
+  box-shadow: -3px 3px 0px #C9C9C9;
+  padding: 10px 10px 10px 10px;
+
+  text-align: center;
+  margin: 0px 20px 20px 20px;
+
+  i {
+    font-size: 90px;
+    margin: 20px 0px 30px 0px;
+  }
+
+  .cardTop {
+  }
+
+  .cardBottom {
+    padding: 10px;
+    margin-top: 10px;
+    background-color: rgba(0, 0, 0, .075);
+    p { margin: 3px; }
+  }
+
+  .stat {
+    padding-top: 15px;
+  }
+
+}

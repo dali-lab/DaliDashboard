@@ -16,7 +16,7 @@ class UserCard extends Component {
   render() {
     const student = studentJson.students[0];
     return (
-      <div id="user_card">
+      <div className="user_card">
         <div>
           <img src={student.imgUrl} alt="profile" />
         </div>

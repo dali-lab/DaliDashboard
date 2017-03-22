@@ -18,7 +18,7 @@ class App extends Component {
 
     // init component state here
     this.state = {
-      activities: [1, 2, 3],
+      activities: [1, 2, 3, 4],
     };
   }
 
@@ -28,25 +28,25 @@ class App extends Component {
         <div className="nav_bar">
           <NavBar />
         </div>
-        <div className="main_card" id="pill" style={{ position: 'relative' }}>
+        <div className="main_card pill ink">
           <Ink />
           <UserCard />
         </div>
         <ProjectCard />
-        <div className="main_card" id="gallery_card">
-          <Gallery />
-        </div>
-        <div className="leaderboard">
+        <div>
           <LeaderBoard />
         </div>
-        <div className="feed_cards">
+        <div>
           <ActivityList activities={this.state.activities} />
           <EventList events={this.state.activities} />
         </div>
-        <div className="header_cards">
+        <div>
           <WeatherCard />
           <CodeCard />
           <CodeCard />
+        </div>
+        <div className="main_card">
+          <Gallery />
         </div>
       </div>
     );

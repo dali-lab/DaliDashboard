@@ -7,7 +7,7 @@ const ActivityListItem = (props) => {
   const subtitle = 'four score and seven years ago';
 
   return (
-    <li className="activityListItem">
+    <li className="activity_list_item">
       <div>
         <img src={IMG_URL} alt="github" />
       </div>

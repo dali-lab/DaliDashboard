@@ -1,0 +1,40 @@
+.project_card {
+  max-width: 35%;
+  #top {
+    padding: 25px;
+    color: white;
+    background-color: $mat-blue;
+    p {
+      font-size: 14px;
+      margin-top: 15px;
+    }
+  }
+  #bottom {
+    padding: 25px 25px 10px 25px;
+    color: $title-color;
+    background-color: white;
+
+    p {
+      margin-bottom: 15px;
+    }
+
+    ul {
+      display: flex;
+      list-style: none;
+      padding-left: 10px;
+      margin-bottom: 0px;
+    }
+  }
+
+  .user_circle {
+    margin-left: -10px;
+    img {
+      cursor: pointer;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      object-fit: cover;
+      background-size: contain;
+    }
+  }
+}

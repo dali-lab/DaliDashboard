@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import './style.scss';
+import './stylesheets/style.scss';
 
 import { Router, browserHistory } from 'react-router';
 import routes from './routes';

@@ -1,0 +1,38 @@
+.nav_bar {
+  width: 100%;
+  background-color: $mat-blue;
+  padding: 10px 0px 5px 10px;
+  color: white;
+
+  h3 {
+    font-weight: 700 !important;
+  }
+
+  #logo {
+    display: flex;
+    align-items: baseline;
+  }
+
+  ul {
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+    margin: 0px;
+    padding-left: 0px;
+
+    li {
+      // font-weight: 100;
+      display: flex;
+      flex-grow: 1;
+      justify-content: center;
+      padding: 15px;
+      cursor: pointer;
+    }
+
+    .selected {
+      border-bottom-style: solid;
+      border-bottom-color: white;
+      border-bottom-width: thin;
+    }
+  }
+}

@@ -1,0 +1,52 @@
+/* Variables */
+@import "./utils.scss";
+
+/* Component Styles */
+@import "./components/_leaderboard_chart.scss";
+@import "./components/_card.scss";
+@import "./components/_nav_bar.scss";
+@import "./components/_event_list.scss";
+@import "./components/_user_card.scss";
+@import "./components/_project_card.scss";
+@import "./components/_header_card.scss";
+@import "./components/_activity_list.scss";
+
+/* External Libraries */
+@import "node_modules/react-image-gallery/styles/scss/image-gallery.scss";
+
+
+body {
+  font-family: "Roboto", sans-serif;
+  color: $title-color;
+  background: darken(white, 10%);
+  margin: 20px;
+
+  h1 { font-size: 70px; }
+  h2 { font-size: 55px; }
+  h3 { font-size: 32px; }
+  h4 { font-size: 20px; }
+
+  h1, h2, h3, h4, p {
+    margin: 0px;
+    font-weight: 300;
+    text-transform: capitalize;
+  }
+
+  #title {
+    font-weight: 400;
+  }
+
+  #subtitle {
+    color: $subtitle-color;
+    text-transform: none;
+  }
+
+  #detail {
+    font-size: 12px;
+    color: $title-color;
+  }
+
+  ul {
+    padding-left: 0px;
+  }
+}
