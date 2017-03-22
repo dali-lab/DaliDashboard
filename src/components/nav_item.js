@@ -12,7 +12,7 @@ class NavItem extends Component {
 
   handleClick() {
     this.props.changeSelected(this.props.index);
-    browserHistory.push('/members');
+    browserHistory.push(this.props.link);
   }
 
   render() {

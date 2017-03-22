@@ -7,11 +7,10 @@ class Members extends React.Component {
   }
 
   render() {
-    console.log('members');
     return (
       <div>
-        <UserCard />
-        <UserCard />
+        <UserCard id={0} />
+        <UserCard id={1} />
       </div>
     );
   }

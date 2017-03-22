@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import NavItem from './nav_item';
 
 const pages = ['Overview', 'Projects', 'Members', 'Blog', 'Gallery', 'Leaderboard'];
+const links = ['/', '/projects', '/members', '/', '/'];
 
 class NavBar extends Component {
   constructor(props) {
@@ -15,7 +16,7 @@ class NavBar extends Component {
 
   createNavItems(navPages) {
     const navItems = pages.map((page, index) => {
-      return <NavItem key={index} title={page} index={index} link="/members" selected={this.state.selectedIndex} changeSelected={(newIndex) => this.setState({ selectedIndex: index })} />;
+      return <NavItem key={index} title={page} index={index} link={links[index]} selected={this.state.selectedIndex} changeSelected={(newIndex) => this.setState({ selectedIndex: index })} />;
     });
     return navItems;
   }

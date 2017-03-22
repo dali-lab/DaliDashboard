@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import ProjectUserList from './project_card_user_list';
+import { browserHistory } from 'react-router';
 
 class ProjectCard extends Component {
   constructor(props) {
@@ -12,7 +13,12 @@ class ProjectCard extends Component {
 
   render() {
     return (
-      <div className="project_card">
+      <div className="project_card" onClick={
+        () => {
+          const routeStr = `/projects/${this.props.id}`;
+          browserHistory.push(routeStr);
+        }
+      }>
         <div id="top">
           <h4> Seabird apps </h4>
           <p> React-Native - Express - Sketch </p>

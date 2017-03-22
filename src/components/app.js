@@ -5,8 +5,6 @@ import ActivityList from './activity_list';
 import EventList from './events_list';
 import LeaderBoard from './leaderboard_chart';
 import Gallery from './gallery_card';
-import ProjectCard from './project_card';
-import UserCard from './user_card';
 
 
 // example class based component (smart component)
@@ -23,8 +21,6 @@ class App extends Component {
   render() {
     return (
       <div>
-        <UserCard />
-        <ProjectCard />
         <div>
           <LeaderBoard />
         </div>
