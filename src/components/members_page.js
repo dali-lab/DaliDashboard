@@ -1,5 +1,7 @@
 import React from 'react';
 import UserCard from './user_card';
+import { Grid, Row, Col } from 'react-flexbox-grid';
+
 
 class Members extends React.Component {
   constructor(props) {
@@ -8,10 +10,24 @@ class Members extends React.Component {
 
   render() {
     return (
-      <div>
-        <UserCard id={0} />
-        <UserCard id={1} />
-      </div>
+
+      <Grid fluid>
+        <Row center="xs">
+          <Col xs={12} sm={6} md={4}>
+            <UserCard id={0} />
+          </Col>
+          <Col xs={12} sm={6} md={4}>
+            <UserCard id={1} />
+          </Col>
+          <Col xs={12} sm={6} md={4}>
+            <UserCard id={2} />
+          </Col>
+          <Col xs={12} sm={6} md={4}>
+            <UserCard id={2} />
+          </Col>
+
+        </Row>
+      </Grid>
     );
   }
 

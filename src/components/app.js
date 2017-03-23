@@ -40,10 +40,10 @@ class App extends Component {
           </Col>
         </Row>
         <Row>
-          <Col xs={12} sm={4}>
+          <Col xs={12} sm={12} md={4}>
             <ActivityList activities={this.state.activities} />
           </Col>
-          <Col xs={12} sm={8}>
+          <Col xs={12} sm={12} md={8}>
             <EventList events={this.state.events} />
           </Col>
         </Row>
