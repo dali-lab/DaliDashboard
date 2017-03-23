@@ -8,7 +8,7 @@ const ActivityList = (props) => {
   });
 
   return (
-    <div className="main_card">
+    <div className="main_card activity_list">
       <h4 id="title"> Activity List </h4>
       <p id="subtitle"> See what Dali members have been up to recently! </p>
       <ul>

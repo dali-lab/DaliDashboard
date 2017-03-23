@@ -4,9 +4,6 @@ import React, {
 import weatherZipSearch from './weather-api';
 import weatherIcons from '../../Assets/weatherIcons.json';
 
-let weatherStyle = {
-  backgroundColor: '#CDDA49',
-};
 
 class WeatherCard extends Component {
   constructor(props) {
@@ -64,7 +61,7 @@ class WeatherCard extends Component {
 
   render() {
     return (
-      <div className="header_card" style={weatherStyle}>
+      <div className="header_card" id="weather">
         <div className="cardTop">
           <i className={this.state.icon}> </i>
           <h2> {this.state.current_temp} </h2>

@@ -28,7 +28,7 @@ class NavBar extends Component {
       <div>
         <div id="logo">
           <h3> DALI </h3>
-          <p> Digital Arts Leadership and Innovation Lab at Dartmouth </p>
+          <p style={{ paddingLeft: '10px' }}> Digital Arts Leadership and Innovation Lab at Dartmouth </p>
         </div>
         <ul>
           {navItems}

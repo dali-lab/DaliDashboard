@@ -28,7 +28,7 @@ class LeaderBoard extends Component {
     };
 
     const type = 'Bar';
-    const aspectRatio = 'ct-octave';
+    const aspectRatio = 'ct-major-twelfth';
 
     return (
       <div className="main_card">

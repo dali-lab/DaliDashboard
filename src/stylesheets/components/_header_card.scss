@@ -1,28 +1,60 @@
 .header_card {
-  color: white;
-  width: 300px;
-  box-shadow: -3px 3px 0px #C9C9C9;
-  padding: 10px 10px 10px 10px;
+  display: flex;
+  flex-direction: column;
+
+  height: 100%;
+  padding: 10px 0px 0px 0px;
 
   text-align: center;
 
+  color: white;
+  box-shadow: -3px 3px 0px #C9C9C9;
+
+  justify-content: center;
+
   i {
+    margin-bottom: 20px;
+
     font-size: 90px;
-    margin: 20px 0px 30px 0px;
   }
 
   .cardTop {
+    padding-top: 15px;
+    padding-bottom: 20px;
+    flex-grow: 1;
+    align-items: center;
   }
 
   .cardBottom {
+    width: 100%;
+    margin-top: auto;
     padding: 10px;
-    margin-top: 10px;
+
     background-color: rgba(0, 0, 0, .075);
+
+    align-self: flex-end;
     p { margin: 3px; }
   }
 
-  .stat {
-    padding-top: 15px;
+  .stat h4{
+    padding-bottom: 15px;
   }
 
+}
+
+#code, #code2 {
+  text-align: left;
+
+  background-color: $mat-purple;
+  h2 {
+    padding-left: 10px;
+  }
+}
+
+#weather {
+  background-color: $mat-orange;
+}
+
+#code2 {
+  background-color: $mat-blue;
 }

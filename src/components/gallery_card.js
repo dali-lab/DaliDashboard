@@ -27,7 +27,7 @@ class Gallery extends Component {
       },
     ];
     return (
-      <div>
+      <div className="main_card">
         <h4 id="title"> Photo Gallery </h4>
         <p id="subtitle"> Here's what's happening in the lab </p>
         <ImageGallery

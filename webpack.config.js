@@ -20,10 +20,16 @@ module.exports = {
     {
       test: /\.scss/,
       loader: ExtractTextPlugin.extract('style-loader', 'css-loader!sass-loader!postcss-loader'),
+      exclude: /flexboxgrid/,
     },
     {
       test: /\.json$/,
       loader: 'json-loader',
+    },
+    {
+      test: /\.css$/,
+      loader: 'style-loader!css-loader',
+      include: /flexboxgrid/,
     },
       // You could also use other loaders the same way. I. e. the autoprefixer-loader
     ],

@@ -8,7 +8,7 @@ const EventList = (props) => {
   });
 
   return (
-    <div className="main_card">
+    <div className="main_card event_list">
       <h4 id="title"> Upcoming Events </h4>
       <p id="subtitle"> Here's what's happening in the lab </p>
       <ul>
