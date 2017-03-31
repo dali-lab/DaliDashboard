@@ -16,3 +16,21 @@
 .activity_list {
   height: 100%;
 }
+
+.two-columns {
+  ul {
+    columns: 2;
+
+  }
+}
+
+@media only screen and (max-width : 770px) and (min-width: 1px){
+    .two-columns ul {
+      columns: 1;
+    }
+
+    .container-fluid {
+      padding-left: 1rem !important;
+      padding-right: 1rem !important;
+    }
+}

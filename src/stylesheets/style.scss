@@ -51,11 +51,13 @@ body {
 
   #title {
     font-weight: 400;
+    text-align: left;
   }
 
   #subtitle {
     color: $subtitle-color;
     text-transform: none;
+    text-align: left;
   }
 
   #detail {
