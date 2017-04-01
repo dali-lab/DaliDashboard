@@ -26,7 +26,7 @@ class UserCard extends Component {
       }>
         <Ink />
         <div>
-          <img src={student.imgUrl} alt="profile" />
+          <img className="rounded" src={student.imgUrl} alt="profile" />
         </div>
         <div>
           <h4 id="title"> {student.name} </h4>

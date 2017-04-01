@@ -1,6 +1,5 @@
 import React from 'react';
 import ActivityListItem from './activity_list_item';
-import { Grid, Row, Col } from 'react-flexbox-grid';
 
 
 const ActivityList = (props) => {

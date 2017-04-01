@@ -22,7 +22,7 @@ class UserCircle extends Component {
   render() {
     return (
       <div className="user_circle">
-        <img onClick={this.handleUserClick} src={this.state.img_url} alt="user" />
+        <img className="rounded" onClick={this.handleUserClick} src={this.state.img_url} alt="user" />
       </div>
     );
   }

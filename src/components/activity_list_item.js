@@ -9,7 +9,7 @@ const ActivityListItem = (props) => {
   return (
     <li className="activity_list_item">
       <div>
-        <img src={IMG_URL} alt="github" />
+        <img className="rounded" src={IMG_URL} alt="github" />
       </div>
       <div>
         <h4 id="title"> {title} </h4>

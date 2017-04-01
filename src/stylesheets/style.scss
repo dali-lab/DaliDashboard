@@ -73,4 +73,10 @@ body {
     padding-left: 0px;
     margin-bottom: 0px;
   }
+
+  .rounded {
+    border-radius: 50%;
+    object-fit: cover;
+    background-size: contain;
+  }
 }
