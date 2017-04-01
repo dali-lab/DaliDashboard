@@ -1,0 +1,13 @@
+.member_page {
+  .header {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  .profile {
+    width: 150px;
+    height: 150px;
+    display: inline;
+    margin: 20px;
+  }
+}
