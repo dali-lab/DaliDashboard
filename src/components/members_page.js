@@ -6,6 +6,8 @@ import { Grid, Row, Col } from 'react-flexbox-grid';
 class Members extends React.Component {
   constructor(props) {
     super(props);
+
+    this.state = {};
   }
 
   render() {

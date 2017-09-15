@@ -1,5 +1,5 @@
 import React from 'react';
-const { Router, Route, IndexRoute, Link, browserHistory } = ReactRouter;
+// import { Router, Route, IndexRoute, Link, browserHistory } from 'react-router';
 
 const People = (props) => {
   return <h1>Home Page</h1>;

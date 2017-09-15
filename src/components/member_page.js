@@ -1,4 +1,4 @@
-import React from 'react';import { Timeline, TimelineEvent } from 'react-event-timeline';
+import React from 'react';
 import TimeLn from './timeline';
 import { Grid, Row, Col } from 'react-flexbox-grid';
 import ActivityList from './activity_list';
