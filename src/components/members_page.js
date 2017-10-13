@@ -1,13 +1,25 @@
 import React from 'react';
 import UserCard from './user_card';
 import { Grid, Row, Col } from 'react-flexbox-grid';
+import axios from 'axios';
 
 
 class Members extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = {};
+    this.state = {
+      members: [],
+    };
+  }
+
+  componentDidMount() {
+    axios.get('https://dalilab-api.herokuapp.com/api/users', { headers: { apiKey: process.env.REACT_APP_API_KEY } }).then((response) => {
+      console.log(response);
+      this.setState({
+        members: response.data,
+      });
+    });
   }
 
   render() {
@@ -15,19 +27,13 @@ class Members extends React.Component {
 
       <Grid fluid>
         <Row center="xs">
-          <Col xs={12} sm={6} md={4}>
-            <UserCard id={0} />
-          </Col>
-          <Col xs={12} sm={6} md={4}>
-            <UserCard id={1} />
-          </Col>
-          <Col xs={12} sm={6} md={4}>
-            <UserCard id={2} />
-          </Col>
-          <Col xs={12} sm={6} md={4}>
-            <UserCard id={2} />
-          </Col>
-
+        {this.state.members.map((member) => {
+          return (
+            <Col xs={12} sm={6} md={4}>
+              <UserCard user={member} />
+            </Col>
+          );
+        })}
         </Row>
       </Grid>
     );
