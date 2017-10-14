@@ -13,8 +13,10 @@
 @import "./components/_project_page.scss";
 @import "./components/_member_page.scss";
 
+
 /* External Libraries */
 @import "node_modules/react-image-gallery/styles/scss/image-gallery.scss";
+@import "./components/_gallery_card.scss";
 
 html {
   box-sizing: border-box;

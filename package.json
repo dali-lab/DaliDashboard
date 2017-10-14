@@ -21,6 +21,7 @@
   "homepage": "https://github.com/dartmouth-cs52/js-starter#readme",
   "devDependencies": {
     "autoprefixer": "^6.3.7",
+    "axios": "^0.16.2",
     "babel-core": "^6.10.4",
     "babel-eslint": "^6.1.2",
     "babel-loader": "^6.2.4",
