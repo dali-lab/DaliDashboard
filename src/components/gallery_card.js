@@ -18,7 +18,7 @@ class Gallery extends Component {
       .then(res => {
         var images = [];
         for (var i=0; i<res.data.length; i++) {
-          var input = {'original': res.data[i], 'thumbnail': res.data[i]};
+          var input = {'original': res.data[i]};
           images.push(input);
         }
         this.setState({ photos: images });
