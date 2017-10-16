@@ -23,6 +23,11 @@ html {
   box-sizing: inherit;
 }
 
+.image-gallery-slides .portrait-slide {
+    width: 5%;
+    margin: 0 auto;
+}
+
 body {
   font-family: "Roboto", sans-serif;
   color: $title-color;

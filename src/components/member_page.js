@@ -3,6 +3,7 @@ import TimeLn from './timeline';
 import { Grid, Row, Col } from 'react-flexbox-grid';
 import ActivityList from './activity_list';
 import axios from 'axios';
+import env from './environment';
 
 class Member extends React.Component {
   constructor(props) {
@@ -14,9 +15,9 @@ class Member extends React.Component {
   }
 
   componentDidMount() {
-    axios.get(`https://dalilab-api.herokuapp.com/api/users/${this.props.params.id}`, {
+    axios.get(`${env.serverURL}/api/users/${this.props.params.id}`, {
       headers: {
-        apiKey: process.env.REACT_APP_API_KEY,
+        apiKey: env.apiKey,
       },
     }).then((response) => {
       this.setState({

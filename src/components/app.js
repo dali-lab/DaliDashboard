@@ -41,7 +41,7 @@ class App extends Component {
         </Row>
         <Row>
           <Col xs={12} sm={12} md={4}>
-            <ActivityList activities={this.state.activities} />
+            <Gallery />
           </Col>
           <Col xs={12} sm={12} md={8}>
             <EventList events={this.state.events} />
@@ -49,7 +49,7 @@ class App extends Component {
         </Row>
         <Row>
           <Col xs={12}>
-            <Gallery />
+            <ActivityList activities={this.state.activities} />
           </Col>
         </Row>
       </Grid>

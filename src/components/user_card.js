@@ -8,17 +8,17 @@ class UserCard extends Component {
     return (
       <div className="main_card user_card pill ink" onClick={
         () => {
-          const routeStr = `/members/${this.props.user.id}`;
+          const routeStr = `/members/${this.props.member.id}`;
           browserHistory.push(routeStr);
         }
       }>
         <Ink />
         <div>
-          <img className="rounded" src={this.props.user.photoUrl} alt="profile" />
+          <img className="rounded" src={this.props.member.photoUrl} alt="profile" />
         </div>
         <div>
-          <h4 id="title"> {this.props.user.fullName} </h4>
-          <p id="detail"> {this.props.user.skills.join(' - ')} </p>
+          <h4 id="title"> {this.props.member.fullName} </h4>
+          <p id="detail"> {this.props.member.skills.join(' - ')} </p>
         </div>
       </div>
     );
