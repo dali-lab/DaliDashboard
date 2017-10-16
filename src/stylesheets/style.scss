@@ -13,19 +13,16 @@
 @import "./components/_project_page.scss";
 @import "./components/_member_page.scss";
 
+
 /* External Libraries */
 @import "node_modules/react-image-gallery/styles/scss/image-gallery.scss";
+@import "./components/_gallery_card.scss";
 
 html {
   box-sizing: border-box;
 }
 *, *:before, *:after {
   box-sizing: inherit;
-}
-
-.image-gallery-slides .portrait-slide {
-    width: 5%;
-    margin: 0 auto;
 }
 
 body {

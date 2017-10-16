@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import ImageGallery from 'react-image-gallery';
-
 import axios from 'axios';
 import env from './environment';
 
@@ -11,7 +10,7 @@ class Gallery extends Component {
     this.state = {
       lightboxIsOpen: false,
       currentImage: 0,
-      images: [],
+      photos: [],
     };
 
     axios.get(`${env.serverURL}/api/photos`).then((photos) => {
@@ -26,20 +25,14 @@ class Gallery extends Component {
     });
   }
 
-  renderImage(image) {
-    return (
-      <div className="image-gallery-image">
-        <img alt="img" src={image.original} style={{ maxHeight: 200, objectFit: 'scale-down' }} />
-      </div>
-    );
-  }
-
-  renderThumb(image) {
-    return (
-      <div className="image-gallery-image">
-        <img alt="img" src={image.thumbnail} style={{ height: 70, objectFit: 'scale-down' }} />
-      </div>
-    );
+  componentWillMount() {
+    axios.get('https://dalilab-api.herokuapp.com/api/photos/')
+      .then(res => {
+        const images = res.data.map((data) => {
+          return { original: data };
+        });
+        this.setState({ photos: images });
+      });
   }
 
   render() {
@@ -48,13 +41,10 @@ class Gallery extends Component {
         <h4 id="title"> Photo Gallery </h4>
         <p id="subtitle"> Here's what's happening in the lab </p>
         <ImageGallery
-          items={this.state.images}
+          items={this.state.photos}
           slideInterval={2000}
-          renderItem={(item) => this.renderImage(item)}
-          renderThumbInner={(item) => this.renderThumb(item)}
-          autoPlay
           lazyLoad
-          slideDuration={5000}
+          showThumbnails={false}
         />
       </div>
     );
