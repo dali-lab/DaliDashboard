@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import ImageGallery from 'react-image-gallery';
 import axios from 'axios';
+import env from './environment';
 
 class Gallery extends Component {
   constructor(props) {
@@ -11,31 +12,39 @@ class Gallery extends Component {
       currentImage: 0,
       photos: [],
     };
+
+    axios.get(`${env.serverURL}/api/photos`).then((photos) => {
+      console.log(photos.data);
+      const images = photos.data.map((photo) => {
+        return {
+          original: photo,
+          thumbnail: photo,
+        };
+      });
+      this.setState({ images });
+    });
   }
 
   componentWillMount() {
-    axios.get(`https://dalilab-api.herokuapp.com/api/photos/`)
+    axios.get('https://dalilab-api.herokuapp.com/api/photos/')
       .then(res => {
-        var images = [];
-        for (var i=0; i<res.data.length; i++) {
-          var input = {'original': res.data[i]};
-          images.push(input);
-        }
+        const images = res.data.map((data) => {
+          return { original: data };
+        });
         this.setState({ photos: images });
       });
   }
 
   render() {
-    const images = this.state.photos;
     return (
       <div className="main_card">
         <h4 id="title"> Photo Gallery </h4>
         <p id="subtitle"> Here's what's happening in the lab </p>
         <ImageGallery
-          items={images}
+          items={this.state.photos}
           slideInterval={2000}
-          lazyLoad = {true}
-          showThumbnails = {false}
+          lazyLoad
+          showThumbnails={false}
         />
       </div>
     );

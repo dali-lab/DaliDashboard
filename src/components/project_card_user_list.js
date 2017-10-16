@@ -2,13 +2,13 @@ import React from 'react';
 import UserCircle from './user_circle';
 
 const ProjectUserList = (props) => {
-  const userList = props.users.map((user, index) => {
-    return <UserCircle key={index} />;
+  const memberList = props.members.map((member) => {
+    return <UserCircle member={member.user} key={member.user.id} />;
   });
 
   return (
     <ul>
-      {userList}
+      {memberList}
     </ul>
   );
 };

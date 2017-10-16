@@ -1,33 +1,20 @@
 import React, { Component } from 'react';
 import ProjectUserList from './project_card_user_list';
-import { browserHistory } from 'react-router';
+import { Link } from 'react-router';
 
 class ProjectCard extends Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      users: [1, 2, 3],
-    };
-  }
-
   render() {
     return (
-      <div className="project_card" onClick={
-        () => {
-          const routeStr = `/projects/${this.props.id}`;
-          browserHistory.push(routeStr);
-        }
-      }>
+      <Link className="project_card" style={{ textDecoration: 'none' }} to={`/projects/${this.props.project.id}`}>
         <div id="top">
-          <h4> Seabird apps </h4>
-          <p> React-Native - Express - Sketch </p>
+          <h4>{this.props.project.title}</h4>
+          <p>{this.props.project.techStack}</p>
         </div>
         <div id="bottom">
-          <p> a multiline description blah blah alsjdf lskj woefj woij flskdjf lj </p>
-          <ProjectUserList users={this.state.users} />
+          <p>{this.props.project.shortDescription}</p>
+          <ProjectUserList members={this.props.project.members} />
         </div>
-      </div>
+      </Link>
     );
   }
 }

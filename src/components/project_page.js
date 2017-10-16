@@ -1,17 +1,37 @@
 import React from 'react';
-import StatWidget from './stat_widget';
 import UserCard from './user_card';
-import ActivityList from './activity_list';
 import { Grid, Row, Col } from 'react-flexbox-grid';
 
+import axios from 'axios';
+import env from './environment';
 
 class Project extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {};
+
+    axios.get(`${env.serverURL}/api/projects/${this.props.params.id}`, {
+      headers: {
+        apiKey: env.apiKey,
+      },
+    }).then((project) => {
+      console.log(project);
+      this.setState({ project: project.data });
+    });
+  }
+
 
   render() {
-    const memArr = [1, 2, 3];
-    const members = memArr.map((member, index) => {
+    if (this.state.project == null) {
+      return (
+        <div />
+      );
+    }
+
+    const members = this.state.project.members.map((member) => {
       return (<Col xs={12} sm={6} md={4}>
-        <UserCard id={0} />
+        <UserCard member={member.user} />
       </Col>);
     });
 
@@ -19,27 +39,15 @@ class Project extends React.Component {
       <div>
         <Grid fluid>
           <Col xs={12}>
-            <h4> Projects </h4>
-            <h1> Seabird Apps {this.props.params.id} </h1>
+            <h1>{this.state.project.title}</h1>
           </Col>
-          <Row around="xs">
-            <Col xs={10} sm={4} md={3}>
-              <StatWidget />
-            </Col>
-            <Col xs={10} sm={4} md={3}>
-              <StatWidget />
-            </Col>
-            <Col xs={10} sm={4} md={3}>
-              <StatWidget />
-            </Col>
-          </Row>
           <Row>
             <Col xs={12}>
               <h4> Description </h4>
             </Col>
             <Col xs={12}>
               <div className="main_card">
-                <p> hello this is seabird apps </p>
+                <p>{this.state.project.longDescription}</p>
               </div>
             </Col>
             <Col xs={12}>
@@ -48,14 +56,6 @@ class Project extends React.Component {
           </Row>
           <Row center="xs">
             {members}
-          </Row>
-          <Col xs={12}>
-            <h4> Activity Feed </h4>
-          </Col>
-          <Row center="xs">
-            <Col center="xs" xs={12} sm={12} md={10} className="two-columns">
-              <ActivityList activities={[1, 2, 3, 4]} />
-            </Col>
           </Row>
         </Grid>
       </div>
