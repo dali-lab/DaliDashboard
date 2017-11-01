@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import NavItem from './nav_item';
 
+import DALIwhiteLogo from '../../Assets/imgs/DALIwhiteLogo.png';
+
 const pages = ['Overview', 'Projects', 'Members', 'Blog', 'Gallery', 'Leaderboard'];
 const links = ['/', '/projects', '/members', '/', '/'];
 
@@ -10,9 +12,20 @@ class NavBar extends Component {
 
     this.state = {
       selectedIndex: 0,
+      width: 0,
+      height: 0,
     };
+    this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
   }
 
+  componentDidMount() {
+    this.updateWindowDimensions();
+    window.addEventListener('resize', this.updateWindowDimensions);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.updateWindowDimensions);
+  }
 
   createNavItems(navPages) {
     const navItems = pages.map((page, index) => {
@@ -21,19 +34,28 @@ class NavBar extends Component {
     return navItems;
   }
 
+  updateWindowDimensions() {
+    this.setState({ width: window.innerWidth, height: window.innerHeight });
+  }
+
   render() {
     const navItems = this.createNavItems(pages);
 
-    return (
-      <div>
+    const daliImage = (
+      <li id="logo">
         <div id="logo">
-          <h3> DALI </h3>
-          <p style={{ paddingLeft: '10px' }}> Digital Arts Leadership and Innovation Lab at Dartmouth </p>
+          <img alt="DALI Logo" src={DALIwhiteLogo} />
         </div>
-        <ul>
-          {navItems}
-        </ul>
-      </div>
+      </li>
+    );
+
+    return (
+      <ul>
+        {this.state.width <= 900 ? daliImage : null}
+        {navItems.slice(0, navItems.length / 2)}
+        {this.state.width > 900 ? daliImage : null}
+        {navItems.slice(navItems.length / 2, navItems.length)}
+      </ul>
     );
   }
 }

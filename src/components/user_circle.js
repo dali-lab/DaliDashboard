@@ -1,14 +1,19 @@
 import React, {
   Component,
 } from 'react';
-import { Link } from 'react-router';
+import { browserHistory } from 'react-router';
 
 class UserCircle extends Component {
+  handleClick() {
+    const route = `/members/${this.props.member.id}`;
+    browserHistory.push(route);
+  }
+
   render() {
     return (
-      <Link className="user_circle" to={`/members/${this.props.member.id}`}>
+      <div className="user_circle" onClick={() => this.handleClick()}>
         <img className="rounded" src={this.props.member.photoUrl} alt="." />
-      </Link>
+      </div>
     );
   }
 }

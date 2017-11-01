@@ -10,9 +10,11 @@ class Gallery extends Component {
     this.state = {
       lightboxIsOpen: false,
       currentImage: 0,
-      photos: [],
+      images: [],
     };
+  }
 
+  componentWillMount() {
     axios.get(`${env.serverURL}/api/photos`).then((photos) => {
       console.log(photos.data);
       const images = photos.data.map((photo) => {
@@ -25,25 +27,16 @@ class Gallery extends Component {
     });
   }
 
-  componentWillMount() {
-    axios.get('https://dalilab-api.herokuapp.com/api/photos/')
-      .then(res => {
-        const images = res.data.map((data) => {
-          return { original: data };
-        });
-        this.setState({ photos: images });
-      });
-  }
-
   render() {
     return (
       <div className="main_card">
         <h4 id="title"> Photo Gallery </h4>
         <p id="subtitle"> Here's what's happening in the lab </p>
         <ImageGallery
-          items={this.state.photos}
-          slideInterval={2000}
+          items={this.state.images}
+          slideInterval={20000}
           lazyLoad
+          autoPlay
           showThumbnails={false}
         />
       </div>

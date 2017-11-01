@@ -12,6 +12,8 @@
 @import "./components/_activity_list.scss";
 @import "./components/_project_page.scss";
 @import "./components/_member_page.scss";
+@import "./components/_homepage.scss";
+@import "./components/_calendar_component.scss";
 
 
 /* External Libraries */
@@ -28,7 +30,7 @@ html {
 body {
   font-family: "Roboto", sans-serif;
   color: $title-color;
-  background: darken(white, 10%);
+  background: 'white';
 
   h1 { font-size: 70px; }
   h2 { font-size: 55px; }

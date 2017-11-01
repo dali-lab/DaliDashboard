@@ -1,0 +1,42 @@
+.homepage {
+  #topRow {
+    display: flex;
+
+    #calendarContainer {
+      #image {
+        width: 200px;
+        padding: 10px;
+      }
+    }
+
+    #graphContainer {
+    }
+  }
+
+  #secondRow {
+    #membersContainer {
+      img {
+        width: 80%;
+        max-width: 300px;
+      }
+    }
+
+    #searchContainer {
+    }
+
+    #progressContainer {
+      img {
+        width: 80%;
+        max-width: 300px;
+      }
+    }
+  }
+
+  .Row {
+    background-color: red;
+  }
+
+  img {
+    width: 100%;
+  }
+}
