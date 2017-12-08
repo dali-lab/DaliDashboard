@@ -1,5 +1,5 @@
 {
-  "name": "js-react-starter",
+  "name": "dali-dashboard",
   "version": "1.0.0",
   "description": "",
   "main": "src/index.js",
@@ -7,18 +7,18 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node_modules/.bin/webpack-dev-server --inline --hot",
     "build": "WEBPACK_ENV=production node_modules/.bin/webpack --optimize-minimize --progress --color",
-    "deploy": "npm run build; surge -p . -d tim-js-starter.surge.sh"
+    "deploy": "npm run build; surge -p . -d tangy-songs.surge.sh"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/dartmouth-cs52/js-starter.git"
+    "url": "https://github.com/dali-lab/DaliDashboard.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/dartmouth-cs52/js-starter/issues"
+    "url": "https://github.com/dali-lab/DaliDashboard/issues"
   },
-  "homepage": "https://github.com/dartmouth-cs52/js-starter#readme",
+  "homepage": "https://github.com/dali-lab/DaliDashboard/blob/master/README.md",
   "devDependencies": {
     "autoprefixer": "^6.3.7",
     "axios": "^0.16.2",
