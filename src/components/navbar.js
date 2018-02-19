@@ -1,21 +1,40 @@
 import React, { Component } from 'react';
 import NavItem from './nav_item';
+import { GoogleLogin, GoogleLogout } from 'react-google-login';
+import axios from 'axios';
+import env from './environment';
 
 import DALIwhiteLogo from '../../Assets/imgs/DALIwhiteLogo.png';
 
-const pages = ['Overview', 'Projects', 'Members', 'Blog', 'Gallery', 'Leaderboard'];
-const links = ['/', '/projects', '/members', '/', '/'];
+const pages = ['about', 'projects', 'members'/* , 'join us', 'blog'*/];
+const links = ['/', '/projects', '/members'/* , 'http://dali.dartmouth.edu/apply/', '/'*/];
 
 class NavBar extends Component {
   constructor(props) {
     super(props);
 
+    const token = window.localStorage.token;
     this.state = {
       selectedIndex: 0,
       width: 0,
       height: 0,
+      haveToken: token !== 'undefined',
+      user: null,
     };
     this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
+
+    if (token !== 'undefined') {
+      axios.get(`${env.serverURL}/api/users/me`, {
+        headers: {
+          authorization: token,
+        },
+      }).then((user) => {
+        this.setState({ user: user.data });
+      }).catch(() => {
+        this.setState({ user: null, haveToken: false });
+        window.localStorage.setItem('token', undefined);
+      });
+    }
   }
 
   componentDidMount() {
@@ -38,23 +57,71 @@ class NavBar extends Component {
     this.setState({ width: window.innerWidth, height: window.innerHeight });
   }
 
+  responseGoogle = (thing) => {
+    axios.post(`https://www.googleapis.com/oauth2/v4/token?
+code=${thing.code}&
+client_id=${env.googleClientID}&
+client_secret=${env.googleSecret}&
+redirect_uri=http://localhost:8080&
+grant_type=authorization_code`)
+    .then((auth) => {
+      return axios.post(`${env.serverURL}/api/signin`, {
+        access_token: auth.data.access_token,
+        refresh_token: auth.data.refresh_token,
+      });
+    })
+    .then((data) => {
+      this.setState({ user: data.data.user, haveToken: true });
+      window.localStorage.setItem('token', data.data.token);
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+  }
+
+  logout = () => {
+    window.localStorage.setItem('token', undefined);
+    this.setState({ user: null, haveToken: false });
+  }
+
   render() {
     const navItems = this.createNavItems(pages);
 
-    const daliImage = (
-      <li id="logo">
-        <div id="logo">
-          <img alt="DALI Logo" src={DALIwhiteLogo} />
-        </div>
-      </li>
-    );
-
     return (
       <ul>
-        {this.state.width <= 900 ? daliImage : null}
-        {navItems.slice(0, navItems.length / 2)}
-        {this.state.width > 900 ? daliImage : null}
-        {navItems.slice(navItems.length / 2, navItems.length)}
+        <li id="logo">
+          <div id="logo">
+            <img alt="DALI Logo" src={DALIwhiteLogo} />
+          </div>
+        </li>
+        {navItems}
+        <li>
+          <button onClick={() => { window.location = 'http://dali.dartmouth.edu/apply/'; }}>
+            join us
+          </button>
+        </li>
+        <li>
+          <button onClick={() => { window.location = 'http://dali.dartmouth.edu/blog/'; }}>
+            blog
+          </button>
+        </li>
+        <li id="logo">
+        {!this.state.haveToken && !this.state.user ?
+          <GoogleLogin
+            clientId={env.googleClientID}
+            buttonText="Login"
+            offline
+            responseType="code"
+            prompt="consent"
+            onSuccess={this.responseGoogle}
+            onFailure={this.responseGoogle}
+          />
+          : <GoogleLogout
+            buttonText="Logout"
+            onLogoutSuccess={this.logout}
+          />
+        }
+        </li>
       </ul>
     );
   }
