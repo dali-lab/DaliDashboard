@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import NavItem from './nav_item';
-import { GoogleLogin, GoogleLogout } from 'react-google-login';
+import { GoogleLogin } from 'react-google-login';
 import axios from 'axios';
 import env from './environment';
 
@@ -124,10 +124,7 @@ class NavBar extends Component {
             onSuccess={this.responseGoogle}
             onFailure={this.responseGoogle}
           />
-          : <GoogleLogout
-            buttonText="Logout"
-            onLogoutSuccess={this.logout}
-          />
+          : <button onClick={this.logout}>Logout</button>
         }
         </li>
       </ul>
