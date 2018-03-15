@@ -42,8 +42,8 @@ brew install node
 ```
 - Get the dashboard code and install packages
 ```bash
-git clone git@github.com:dali-lab/DaliDashboard.git dashboard
-cd dashboard
+git clone git@github.com:dali-lab/DaliDashboard.git dashboard;
+cd dashboard;
 npm install --dev
 ```
 - (optional) ESLint (makes sure your code is well formatted and has no syntax errors)
