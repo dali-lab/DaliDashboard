@@ -42,8 +42,8 @@ brew install node
 ```
 - Get the dashboard code and install packages
 ```bash
-git clone git@github.com:dali-lab/DaliDashboard.git dashboard
-cd dashboard
+git clone git@github.com:dali-lab/DaliDashboard.git dashboard;
+cd dashboard;
 npm install --dev
 ```
 - (optional) ESLint (makes sure your code is well formatted and has no syntax errors)
@@ -60,7 +60,7 @@ npm deploy
 ```
 
 ## Contributors:
-> Armin Mahban, John Kotz, Anne Muller
+> Armin Mahban, John Kotz, Anne Muller, Young Jang
 
 ## Acknowledgments
-Thanks Tim Tregubov for the excellent starter resources, and for the help with coding it. Thanks Adam Rinehouse for the tireless assistance on CSS problems and react understanding
+Thanks Tim Tregubov for the excellent starter resources, and for the help with coding it. Thanks Adam Rinehouse for the tireless assistance on CSS problems and react understanding. Finally thanks Young Jang for amazing designs.
