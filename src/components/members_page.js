@@ -15,7 +15,7 @@ class Members extends React.Component {
   }
 
   componentDidMount() {
-    axios.get(`${env.serverURL}/api/users`, { headers: { apiKey: env.apiKey } }).then((response) => {
+    axios.get(`${env.serverURL}/api/users`, { headers: { authorization: window.localStorage.token } }).then((response) => {
       console.log(response);
       this.setState({
         members: response.data,
