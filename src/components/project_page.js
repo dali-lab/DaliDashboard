@@ -12,9 +12,7 @@ class Project extends React.Component {
     this.state = {};
 
     axios.get(`${env.serverURL}/api/projects/${this.props.params.id}`, {
-      headers: {
-        apiKey: env.apiKey,
-      },
+      headers: { authorization: window.localStorage.token },
     }).then((project) => {
       console.log(project);
       this.setState({ project: project.data });

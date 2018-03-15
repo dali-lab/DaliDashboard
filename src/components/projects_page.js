@@ -20,9 +20,7 @@ class Projects extends React.Component {
   getProjects() {
     return new Promise((resolve, reject) => {
       axios.get(`${env.serverURL}/api/projects`, {
-        headers: {
-          apiKey: env.apiKey,
-        },
+        headers: { authorization: window.localStorage.token },
       }).then((response) => {
         resolve(response.data);
       });

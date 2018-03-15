@@ -8,11 +8,11 @@ class NavItem extends Component {
   }
 
   render() {
-    const liID = this.props.selected === this.props.index ? 'selected' : '';
+    const liID = this.props.selected === this.props.index ? 'selected' : 'unselected';
 
     return (
       <li onClick={() => this.handleClick()} className="navBarItem" id={liID}>
-        {this.props.title}
+        {this.props.children}
       </li>
     );
   }

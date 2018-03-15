@@ -11,9 +11,9 @@ import Project from './components/project_page';
 export default(
   <Route path="/" component={Header}>
     <IndexRoute component={App} />
-    <Route path="members" component={Members} />
     <Route path="members/:id" component={Member} />
-    <Route path="projects" component={Projects} />
+    <Route path="members" component={Members} />
     <Route path="projects/:id" component={Project} />
+    <Route path="projects" component={Projects} />
   </Route>
 );

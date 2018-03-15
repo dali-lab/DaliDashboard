@@ -17,7 +17,7 @@ class Member extends React.Component {
   componentDidMount() {
     axios.get(`${env.serverURL}/api/users/${this.props.params.id}`, {
       headers: {
-        apiKey: env.apiKey,
+        authorization: window.localStorage.token,
       },
     }).then((response) => {
       this.setState({

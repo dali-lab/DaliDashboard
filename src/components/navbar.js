@@ -4,10 +4,8 @@ import { GoogleLogin, GoogleLogout } from 'react-google-login';
 import axios from 'axios';
 import env from './environment';
 
-import DALIwhiteLogo from '../../Assets/imgs/DALIwhiteLogo.png';
-
-const pages = ['about', 'projects', 'members'/* , 'join us', 'blog'*/];
-const links = ['/', '/projects', '/members'/* , 'http://dali.dartmouth.edu/apply/', '/'*/];
+import DALIblackLogo from '../../Assets/imgs/DALIblackLogo.png';
+import DALIblueLogo from '../../Assets/imgs/DALIblueLogo.png';
 
 class NavBar extends Component {
   constructor(props) {
@@ -18,12 +16,12 @@ class NavBar extends Component {
       selectedIndex: 0,
       width: 0,
       height: 0,
-      haveToken: token !== 'undefined',
+      haveToken: token != null,
       user: null,
     };
     this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
 
-    if (token !== 'undefined') {
+    if (token != null) {
       axios.get(`${env.serverURL}/api/users/me`, {
         headers: {
           authorization: token,
@@ -32,7 +30,7 @@ class NavBar extends Component {
         this.setState({ user: user.data });
       }).catch(() => {
         this.setState({ user: null, haveToken: false });
-        window.localStorage.setItem('token', undefined);
+        window.localStorage.removeItem('token');
       });
     }
   }
@@ -46,33 +44,15 @@ class NavBar extends Component {
     window.removeEventListener('resize', this.updateWindowDimensions);
   }
 
-  createNavItems(navPages) {
-    const navItems = pages.map((page, index) => {
-      return <NavItem key={index} title={page} index={index} link={links[index]} selected={this.state.selectedIndex} changeSelected={(newIndex) => this.setState({ selectedIndex: index })} />;
-    });
-    return navItems;
-  }
-
   updateWindowDimensions() {
     this.setState({ width: window.innerWidth, height: window.innerHeight });
   }
 
   responseGoogle = (thing) => {
-    axios.post(`https://www.googleapis.com/oauth2/v4/token?
-code=${thing.code}&
-client_id=${env.googleClientID}&
-client_secret=${env.googleSecret}&
-redirect_uri=http://localhost:8080&
-grant_type=authorization_code`)
-    .then((auth) => {
-      return axios.post(`${env.serverURL}/api/signin`, {
-        access_token: auth.data.access_token,
-        refresh_token: auth.data.refresh_token,
-      });
-    })
-    .then((data) => {
-      this.setState({ user: data.data.user, haveToken: true });
-      window.localStorage.setItem('token', data.data.token);
+    axios.post(`${env.serverURL}/api/signin/code`, thing)
+    .then((response) => {
+      this.setState({ user: response.data.user, haveToken: true });
+      window.localStorage.setItem('token', response.data.token);
     })
     .catch((error) => {
       console.log(error);
@@ -80,21 +60,49 @@ grant_type=authorization_code`)
   }
 
   logout = () => {
-    window.localStorage.setItem('token', undefined);
+    window.localStorage.removeItem('token');
     this.setState({ user: null, haveToken: false });
   }
 
   render() {
-    const navItems = this.createNavItems(pages);
-
     return (
       <ul>
-        <li id="logo">
+        <NavItem
+          id="logo"
+          index={0}
+          link={'/'}
+          selected={this.state.selectedIndex}
+          changeSelected={(newIndex) => this.setState({ selectedIndex: 0 })}
+        >
           <div id="logo">
-            <img alt="DALI Logo" src={DALIwhiteLogo} />
+            <img alt="DALI" src={this.state.selectedIndex !== 0 ? DALIblackLogo : DALIblueLogo} />
           </div>
-        </li>
-        {navItems}
+        </NavItem>
+        <NavItem
+          index={1}
+          link={'/'}
+          selected={this.state.selectedIndex}
+          changeSelected={(newIndex) => this.setState({ selectedIndex: 1 })}
+        >
+        about
+        </NavItem>
+        <NavItem
+          index={2}
+          link={'/projects'}
+          selected={this.state.selectedIndex}
+          changeSelected={(newIndex) => this.setState({ selectedIndex: 2 })}
+        >
+        projects
+        </NavItem>
+        <NavItem
+          title={"members"}
+          index={3}
+          link={'/members'}
+          selected={this.state.selectedIndex}
+          changeSelected={(newIndex) => this.setState({ selectedIndex: 3 })}
+        >
+          members
+        </NavItem>
         <li>
           <button onClick={() => { window.location = 'http://dali.dartmouth.edu/apply/'; }}>
             join us
