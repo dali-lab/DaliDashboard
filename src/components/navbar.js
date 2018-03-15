@@ -11,7 +11,7 @@ class NavBar extends Component {
   constructor(props) {
     super(props);
 
-    const token = window.localStorage.token;
+    const token = window.localStorage.getItem('token');
     this.state = {
       selectedIndex: 0,
       width: 0,
