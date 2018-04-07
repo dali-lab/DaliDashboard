@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import NavItem from './nav_item';
 import { GoogleLogin } from 'react-google-login';
 import axios from 'axios';
-import env from './environment';
+import env from 'env';
 
 import DALIblackLogo from '../../Assets/imgs/DALIblackLogo.png';
 import DALIblueLogo from '../../Assets/imgs/DALIblueLogo.png';

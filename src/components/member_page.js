@@ -3,7 +3,7 @@ import TimeLn from './timeline';
 import { Grid, Row, Col } from 'react-flexbox-grid';
 import ActivityList from './activity_list';
 import axios from 'axios';
-import env from './environment';
+import env from 'env';
 
 class Member extends React.Component {
   constructor(props) {

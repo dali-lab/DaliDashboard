@@ -51,5 +51,5 @@ module.exports = {
   plugins: [
     new ExtractTextPlugin('bundle.css'),
   ],
-
+  dotenv: { fs: 'empty' },
 };

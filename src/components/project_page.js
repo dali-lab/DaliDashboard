@@ -3,7 +3,7 @@ import UserCard from './user_card';
 import { Grid, Row, Col } from 'react-flexbox-grid';
 
 import axios from 'axios';
-import env from './environment';
+import env from 'env';
 
 class Project extends React.Component {
   constructor(props) {
