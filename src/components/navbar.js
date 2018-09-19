@@ -64,69 +64,81 @@ class NavBar extends Component {
     this.setState({ user: null, haveToken: false });
   }
 
+  renderLogo = (id) => {
+    return (
+      <div id={id}>
+        <img alt="DALI" src={this.state.selectedIndex !== 0 ? DALIblackLogo : DALIblueLogo} />
+      </div>
+    )
+  }
+
+  generateNavBar = (navBarInfo) => {
+    let navOptions = navBarInfo.map((item, index) => {
+      let visibleContent;
+      if (item['renderLogo']) {
+        visibleContent = this.renderLogo(item.id);
+      } else {
+        visibleContent = item.id;
+      }
+      return (
+        <NavItem
+          id={item.id}
+          index={index}
+          link={item.link}
+          selected={this.state.selectedIndex}
+          changeSelected={(newIndex) => this.setState({ selectedIndex: index })}
+          >
+            {visibleContent}
+          </NavItem>
+      )
+    })
+    navOptions.push(<li id="logo">
+      {!this.state.haveToken && !this.state.user ?
+        <GoogleLogin
+          clientId={env.googleClientID}
+          buttonText="Login"
+          offline
+          responseType="code"
+          prompt="consent"
+          onSuccess={this.responseGoogle}
+          onFailure={this.responseGoogle}
+        />
+        : <button onClick={this.logout}>Logout</button>
+      }
+    </li>)
+    return navOptions;
+  }
+
   render() {
+    let navBarInfo = [
+      {
+        id: 'logo',
+        link: '/',
+        renderLogo: true,
+      },
+      {
+        id: 'about',
+        link: '/',
+      },
+      {
+        id: 'projects',
+        link: '/projects',
+      },
+      {
+        id: 'members',
+        link: '/members',
+      },
+      {
+        id: 'join us',
+        link: 'http://dali.dartmouth.edu/apply/',
+      },
+      {
+        id: 'blog',
+        link: 'http://dali.dartmouth.edu/blog/',
+      }];
     return (
       <ul>
-        <NavItem
-          id="logo"
-          index={0}
-          link={'/'}
-          selected={this.state.selectedIndex}
-          changeSelected={(newIndex) => this.setState({ selectedIndex: 0 })}
-        >
-          <div id="logo">
-            <img alt="DALI" src={this.state.selectedIndex !== 0 ? DALIblackLogo : DALIblueLogo} />
-          </div>
-        </NavItem>
-        <NavItem
-          index={1}
-          link={'/'}
-          selected={this.state.selectedIndex}
-          changeSelected={(newIndex) => this.setState({ selectedIndex: 1 })}
-        >
-        about
-        </NavItem>
-        <NavItem
-          index={2}
-          link={'/projects'}
-          selected={this.state.selectedIndex}
-          changeSelected={(newIndex) => this.setState({ selectedIndex: 2 })}
-        >
-        projects
-        </NavItem>
-        <NavItem
-          title={"members"}
-          index={3}
-          link={'/members'}
-          selected={this.state.selectedIndex}
-          changeSelected={(newIndex) => this.setState({ selectedIndex: 3 })}
-        >
-          members
-        </NavItem>
-        <li>
-          <button onClick={() => { window.location = 'http://dali.dartmouth.edu/apply/'; }}>
-            join us
-          </button>
-        </li>
-        <li>
-          <button onClick={() => { window.location = 'http://dali.dartmouth.edu/blog/'; }}>
-            blog
-          </button>
-        </li>
-        <li id="logo">
-        {!this.state.haveToken && !this.state.user ?
-          <GoogleLogin
-            clientId={env.googleClientID}
-            buttonText="Login"
-            offline
-            responseType="code"
-            prompt="consent"
-            onSuccess={this.responseGoogle}
-            onFailure={this.responseGoogle}
-          />
-          : <button onClick={this.logout}>Logout</button>
-        }
-        </li>
+        {this.generateNavBar(navBarInfo)}
       </ul>
     );
   }
