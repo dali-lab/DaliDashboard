@@ -1,9 +1,9 @@
 import React from 'react';
-import TimeLn from './timeline';
+import TimeLn from '../components/timeline';
 import { Grid, Row, Col } from 'react-flexbox-grid';
-import ActivityList from './activity_list';
+import ActivityList from '../components/activity_list';
 import axios from 'axios';
-import env from './environment';
+import env from '../components/environment';
 
 class Member extends React.Component {
   constructor(props) {

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import ImageGallery from 'react-image-gallery';
 import axios from 'axios';
-import env from './environment';
+import env from '../environment';
 
 class Gallery extends Component {
   constructor(props) {

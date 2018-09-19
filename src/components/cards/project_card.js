@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import ProjectUserList from './project_card_user_list';
+import ProjectUserList from '../project_card_user_list';
 import { Link } from 'react-router';
 
 class ProjectCard extends Component {
