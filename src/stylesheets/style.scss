@@ -69,6 +69,13 @@ body {
     color: $title-color;
   }
 
+  .logout-header {
+    font-size: 1.5em;
+    font-weight: 600;
+    border: none;
+    margin-left: 10px;
+  }
+
   .bold {
     font-weight: 700;
   }
@@ -82,5 +89,14 @@ body {
     border-radius: 50%;
     object-fit: cover;
     background-size: contain;
+  }
+
+  .small {
+    height: 30px;
+    width: 30px;
+  }
+
+  .flex {
+    display: flex;
   }
 }
