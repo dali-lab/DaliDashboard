@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:400,900');
+.sign-in-button {
+    height: 33px;
+    width: 120px;
+    border-radius: 5px;
+    color: white;
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    border: none;
+    background-color: #F07D21;
+  }
+
+  .me-header {
+    font-family: 'Lato', 'sans-serif';
+    color: #4F4F4F;
+    font-size: 23px;
+    font-weight: 600;
+    border: none;
+    margin-left: 10px;
+    outline: none;
+    background-color: white;
+    cursor: pointer;
+  }
+
+  .me-menu {
+    z-index: 1;
+    position: absolute;
+    overflow-x: auto;
+    background: white;
+    margin-top: 15px;
+    padding: 16px;
+    border-radius: 5px;
+    cursor: default;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5);
+  }
+
+  .me-menu-header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+  }
+
+  .me-title {
+    margin-left: 10px;
+    font-weight: 600;
+  }
+
+  .me-menu-body {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .me-menu-option {
+    margin-top: 9px;
+    cursor: pointer;
+    width: fit-content; 
+  }
+
+  .profile {
+    color: #58AADA;
+    text-decoration: none;
+  }
+
+  .profile:hover {
+    text-decoration: underline;
+  }
+
+  .logout {
+    color: #EB5757;
+  }
