@@ -97,12 +97,13 @@ class NavBar extends Component {
       {!this.state.haveToken && !this.state.user ?
         <GoogleLogin
           clientId={env.googleClientID}
-          buttonText="Login"
+          buttonText="sign in"
           offline
           responseType="code"
           prompt="consent"
           onSuccess={this.responseGoogle}
           onFailure={this.responseGoogle}
+          className="sign-in-button"
         />
         : <UserLogout user={this.state.user} logout={this.logout}/>
       }

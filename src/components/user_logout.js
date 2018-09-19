@@ -56,7 +56,7 @@ class UserLogout extends Component {
                 </div>
                 <div className="me-menu-body">
                     <span className="me-menu-option"><a className="profile" href="#">view profile</a></span>
-                    <span className="me-menu-option logout" onclick={this.props.logout}>logout</span>
+                    <span className="me-menu-option logout" onClick={this.props.logout}>logout</span>
                 </div>
                 </div>
             )
