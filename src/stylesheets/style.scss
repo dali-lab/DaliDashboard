@@ -69,11 +69,57 @@ body {
     color: $title-color;
   }
 
-  .logout-header {
+  .me-header {
     font-size: 1.5em;
     font-weight: 600;
     border: none;
     margin-left: 10px;
+    outline: none;
+  }
+
+  .me-menu {
+    z-index: 1;
+    position: absolute;
+    overflow-x: auto;
+    background: white;
+    margin-top: 15px;
+    padding: 16px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5);
+  }
+
+  .me-menu-header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+  }
+
+  .me-title {
+    margin-left: 10px;
+    font-weight: 600;
+  }
+
+  .me-menu-body {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .me-menu-option {
+    margin-top: 9px;
+  }
+
+  .profile {
+    color: #58AADA;
+    text-decoration: none;
+  }
+
+  .profile:hover {
+    text-decoration: underline;
+  }
+
+  .logout {
+    color: #EB5757;
   }
 
   .bold {
@@ -89,6 +135,11 @@ body {
     border-radius: 50%;
     object-fit: cover;
     background-size: contain;
+  }
+
+  .medium {
+    height: 40px;
+    width: 40px;
   }
 
   .small {

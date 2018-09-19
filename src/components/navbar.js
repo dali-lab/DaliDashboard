@@ -104,7 +104,7 @@ class NavBar extends Component {
           onSuccess={this.responseGoogle}
           onFailure={this.responseGoogle}
         />
-        : <UserLogout user={this.state.user} />
+        : <UserLogout user={this.state.user} logout={this.logout}/>
       }
     </li>)
     return navOptions;
