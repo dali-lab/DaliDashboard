@@ -73,6 +73,26 @@ class NavBar extends Component {
     )
   }
 
+  renderLoginButton = () => {
+    return (
+      <li id="login-button">
+        {!this.state.haveToken && !this.state.user ?
+          <GoogleLogin
+            clientId={env.googleClientID}
+            buttonText="sign in"
+            offline
+            responseType="code"
+            prompt="consent"
+            onSuccess={this.responseGoogle}
+            onFailure={this.responseGoogle}
+            className="sign-in-button"
+          />
+          : <UserLogout user={this.state.user} logout={this.logout} />
+        }
+      </li>
+    )
+  }
+
   generateNavBar = (navBarInfo) => {
     let navOptions = navBarInfo.map((item, index) => {
       let visibleContent;
@@ -93,21 +113,7 @@ class NavBar extends Component {
           </NavItem>
       )
     })
-    navOptions.push(<li id="logo">
-      {!this.state.haveToken && !this.state.user ?
-        <GoogleLogin
-          clientId={env.googleClientID}
-          buttonText="sign in"
-          offline
-          responseType="code"
-          prompt="consent"
-          onSuccess={this.responseGoogle}
-          onFailure={this.responseGoogle}
-          className="sign-in-button"
-        />
-        : <UserLogout user={this.state.user} logout={this.logout}/>
-      }
-    </li>)
+    navOptions.push(this.renderLoginButton());
     return navOptions;
   }
 
