@@ -27,10 +27,10 @@ class Members extends React.Component {
     return (
 
       <Grid fluid>
-        <Row center="xs">
+        <Row center="lg">
         {this.state.members.map((member) => {
           return (
-            <Col xs={12} sm={6} md={4}>
+            <Col xs={2.5} sm={2.5} md={2.5}>
               <UserCard member={member} />
             </Col>
           );
