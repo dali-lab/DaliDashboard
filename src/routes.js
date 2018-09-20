@@ -3,10 +3,10 @@ import { Route, IndexRoute } from 'react-router';
 
 import App from './components/app';
 import Header from './components/site_header';
-import Members from './components/members_page';
-import Projects from './components/projects_page';
-import Member from './components/member_page';
-import Project from './components/project_page';
+import Members from './pages/members_page';
+import Projects from './pages/projects_page';
+import Member from './pages/member_page';
+import Project from './pages/project_page';
 
 export default(
   <Route path="/" component={Header}>

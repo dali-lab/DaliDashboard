@@ -1,11 +1,14 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:400,900');
 .nav_bar {
   width: 100%;
   background-color: transparent;
-  color: black;
+  color: #4F4F4F;
   padding-top: 5px;
   padding-bottom: 5px;
   display: flex;
   justify-content: center;
+  font-family: 'Lato', 'san-serif';
+  font-weight: 900;
 
   h3 {
     font-weight: 700 !important;
@@ -15,7 +18,7 @@
     width: 100%
   }
 
-  #logo {
+  #logo, #login-button {
     width: 100px;
   }
 
@@ -26,12 +29,12 @@
     width: 70%;
 
     li {
-      // font-weight: 100;
       display: flex;
       flex-grow: 1;
       justify-content: center;
       align-self: center;
       padding: 5px;
+      font-size: 20px;
       cursor: pointer;
       margin: 0px;
       padding-left: 0px;

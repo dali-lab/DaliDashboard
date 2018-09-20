@@ -4,8 +4,8 @@
 /* Component Styles */
 @import "./components/_leaderboard_chart.scss";
 @import "./components/_card.scss";
+@import "./components/_user_logout.scss";
 @import "./components/_nav_bar.scss";
-@import "./components/_event_list.scss";
 @import "./components/_user_card.scss";
 @import "./components/_project_card.scss";
 @import "./components/_header_card.scss";
@@ -13,7 +13,6 @@
 @import "./components/_project_page.scss";
 @import "./components/_member_page.scss";
 @import "./components/_homepage.scss";
-@import "./components/_calendar_component.scss";
 
 
 /* External Libraries */
@@ -82,5 +81,19 @@ body {
     border-radius: 50%;
     object-fit: cover;
     background-size: contain;
+  }
+
+  .medium {
+    height: 40px;
+    width: 40px;
+  }
+
+  .small {
+    height: 30px;
+    width: 30px;
+  }
+
+  .flex {
+    display: flex;
   }
 }

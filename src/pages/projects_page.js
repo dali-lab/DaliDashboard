@@ -1,8 +1,8 @@
 import React from 'react';
-import ProjectCard from './project_card';
+import ProjectCard from '../components/cards/project_card';
 import { Grid, Row, Col } from 'react-flexbox-grid';
 import axios from 'axios';
-import env from './environment';
+import env from '../components/environment';
 
 class Projects extends React.Component {
   constructor(props) {

@@ -1,7 +1,7 @@
 import React, {
   Component,
 } from 'react';
-import weatherZipSearch from './weather-api';
+import weatherZipSearch from '../weather-api';
 import weatherIcons from '../../Assets/weatherIcons.json';
 
 

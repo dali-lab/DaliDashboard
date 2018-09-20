@@ -4,7 +4,12 @@ import { browserHistory } from 'react-router';
 class NavItem extends Component {
   handleClick() {
     this.props.changeSelected(this.props.index);
-    browserHistory.push(this.props.link);
+    // Checking to see if link is internal route or http://
+    if (this.props.link.substring(0, 1) !== '/') {
+      window.location = this.props.link;
+    } else {
+      browserHistory.push(this.props.link);
+    }
   }
 
   render() {
