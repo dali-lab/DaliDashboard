@@ -2,7 +2,9 @@
 .user_card {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   align-items: center;
+  text-align: center;
   height: 200px;
   width: 220px;
   font-family: 'Lato', 'sans-serif';
