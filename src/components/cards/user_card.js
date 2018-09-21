@@ -5,6 +5,7 @@ import Ink from 'react-ink';
 class UserCard extends Component {
 
   render() {
+    console.log('members?', this.props);
     return (
       <div className="main_card user_card pill ink" onClick={
         () => {
@@ -14,7 +15,7 @@ class UserCard extends Component {
       }>
         <Ink />
         <div>
-          <img className="rounded" src={this.props.member.photoUrl} alt="profile" />
+          <img className="rounded" src={(this.props.member) ? this.props.member.photoUrl : ''} alt="profile" />
         </div>
         <div>
           <h4 id="title"> {this.props.member.fullName} </h4>

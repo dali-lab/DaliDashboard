@@ -5,19 +5,24 @@ import { Grid, Row, Col } from 'react-flexbox-grid';
 import axios from 'axios';
 import env from '../components/environment';
 
+const serverURL = 'https://dalilab-api.herokuapp.com';
+
 class Project extends React.Component {
   constructor(props) {
     console.log('constructing....');
     super(props);
 
     this.state = {};
-
-    axios.get(`${env.serverURL}/api/projects/${this.props.params.id}`, {
-      headers: { authorization: window.localStorage.token },
-    }).then((project) => {
-      console.log(project);
-      this.setState({ project: project.data });
-    });
+    console.log('this.props: ', this.props.params.id);
+    if (this.props.params.id) {
+      axios.get(`${serverURL}/api/projects/${this.props.params.id}`, {
+        headers: { authorization: window.localStorage.token },
+      }).then((project) => {
+        console.log('made it to the proect!');
+        console.log(project);
+        this.setState({ project: project.data });
+      });
+    }
   }
 
 
@@ -25,7 +30,7 @@ class Project extends React.Component {
     if (this.state.project == null) {
       console.log('state is null');
       return (
-        <div />
+        <div> Individual Project info should go here </div>
       );
     }
 
@@ -39,7 +44,7 @@ class Project extends React.Component {
       <div>
         <Grid fluid>
           <Col xs={12}>
-            <h1>{this.state.project.title}</h1>
+            <h1>{(this.state.project.title) ? this.state.project.title : 'title'}</h1>
           </Col>
           <Row>
             <Col xs={12}>
@@ -55,7 +60,7 @@ class Project extends React.Component {
             </Col>
           </Row>
           <Row center="xs">
-            {members}
+
           </Row>
         </Grid>
       </div>

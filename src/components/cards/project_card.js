@@ -15,7 +15,7 @@ class ProjectCard extends Component {
         </Link>
         <div id="bottom">
           <p>{this.props.project.shortDescription}</p>
-
+          <ProjectUserList members={this.props.project.members} />
         </div>
       </div>
     );
