@@ -60,7 +60,7 @@ class Project extends React.Component {
             </Col>
           </Row>
           <Row center="xs">
-
+            {members}
           </Row>
         </Grid>
       </div>

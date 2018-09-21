@@ -4,6 +4,7 @@ import { Grid, Row, Col } from 'react-flexbox-grid';
 import axios from 'axios';
 import env from '../components/environment';
 
+const serverURL = 'https://dalilab-api.herokuapp.com';
 
 class Members extends React.Component {
   constructor(props) {
@@ -15,7 +16,8 @@ class Members extends React.Component {
   }
 
   componentDidMount() {
-    axios.get(`${env.serverURL}/api/users`, { headers: { authorization: window.localStorage.token } }).then((response) => {
+    console.log('env: ', env);
+    axios.get(`${serverURL}/api/users`, { headers: { authorization: window.localStorage.token } }).then((response) => {
       console.log(response);
       this.setState({
         members: response.data,

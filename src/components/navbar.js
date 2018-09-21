@@ -8,6 +8,7 @@ import env from './environment';
 import DALIblackLogo from '../../Assets/imgs/DALIblackLogo.png';
 import DALIblueLogo from '../../Assets/imgs/DALIblueLogo.png';
 
+console.log('environment: ', env);
 class NavBar extends Component {
   constructor(props) {
     super(props);
@@ -70,7 +71,7 @@ class NavBar extends Component {
       <div id={id}>
         <img alt="DALI" src={this.state.selectedIndex !== 0 ? DALIblackLogo : DALIblueLogo} />
       </div>
-    )
+    );
   }
 
   renderLoginButton = () => {
@@ -78,7 +79,7 @@ class NavBar extends Component {
       <li id="login-button">
         {!this.state.haveToken && !this.state.user ?
           <GoogleLogin
-            clientId={env.googleClientID}
+            clientId={(env) ? env.googleClientID : ''}
             buttonText="sign in"
             offline
             responseType="code"
@@ -90,7 +91,7 @@ class NavBar extends Component {
           : <UserLogout user={this.state.user} logout={this.logout} />
         }
       </li>
-    )
+    );
   }
 
   generateNavBar = (navBarInfo) => {
@@ -108,11 +109,11 @@ class NavBar extends Component {
           link={item.link}
           selected={this.state.selectedIndex}
           changeSelected={(newIndex) => this.setState({ selectedIndex: index })}
-          >
+        >
             {visibleContent}
           </NavItem>
-      )
-    })
+      );
+    });
     navOptions.push(this.renderLoginButton());
     return navOptions;
   }
