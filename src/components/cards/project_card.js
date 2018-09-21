@@ -4,6 +4,7 @@ import { Link } from 'react-router';
 
 class ProjectCard extends Component {
   render() {
+    console.log('proectCard props: ', this.props.project);
     return (
       <div className="project_card" style={{ textDecoration: 'none' }}>
         <Link to={`/projects/${this.props.project.id}`} className="link">
@@ -14,7 +15,7 @@ class ProjectCard extends Component {
         </Link>
         <div id="bottom">
           <p>{this.props.project.shortDescription}</p>
-          <ProjectUserList members={this.props.project.members} />
+
         </div>
       </div>
     );

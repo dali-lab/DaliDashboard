@@ -7,6 +7,7 @@ import env from '../components/environment';
 
 class Project extends React.Component {
   constructor(props) {
+    console.log('constructing....');
     super(props);
 
     this.state = {};
@@ -22,6 +23,7 @@ class Project extends React.Component {
 
   render() {
     if (this.state.project == null) {
+      console.log('state is null');
       return (
         <div />
       );
@@ -32,7 +34,7 @@ class Project extends React.Component {
         <UserCard member={member.user} />
       </Col>);
     });
-
+    console.log('state not null');
     return (
       <div>
         <Grid fluid>
