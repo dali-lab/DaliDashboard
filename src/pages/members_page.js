@@ -26,7 +26,7 @@ class Members extends React.Component {
   render() {
     return (
 
-      <Grid fluid>
+      <Grid fluid style={{ 'max-width': '1400px' }}>
         <Row center="lg">
         {this.state.members.map((member) => {
           return (

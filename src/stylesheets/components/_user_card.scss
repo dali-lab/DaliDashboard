@@ -5,7 +5,7 @@
   justify-content: space-between;
   align-items: center;
   text-align: center;
-  height: 200px;
+  height: 250px;
   width: 220px;
   font-family: 'Lato', 'sans-serif';
   border-radius: 5px;
@@ -14,6 +14,11 @@
 
   .member-name {
     font-weight: 700;
+    margin-top: 5px;
+  }
+
+  .member-detail {
+    margin-top: 10px;
   }
 
   .more-information {
