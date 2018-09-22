@@ -40,6 +40,9 @@ To get started developing for the dashboard, you will need the following:
 ```bash
 brew install node
 ```
+
+Note: If errors arise, make sure that your NodeJS version is `6`
+
 - Get the dashboard code and install packages
 ```bash
 git clone git@github.com:dali-lab/DaliDashboard.git dashboard;
