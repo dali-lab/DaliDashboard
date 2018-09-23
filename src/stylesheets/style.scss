@@ -19,7 +19,6 @@
 @import "node_modules/react-image-gallery/styles/scss/image-gallery.scss";
 @import "./components/_gallery_card.scss";
 
-
 html {
   box-sizing: border-box;
 }
@@ -28,7 +27,7 @@ html {
 }
 
 body {
-  font-family: "Roboto", sans-serif;
+  font-family: $body-font;
   color: $dark-gray;
   background: 'white';
 
