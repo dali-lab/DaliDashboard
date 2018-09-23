@@ -1,10 +1,40 @@
 .user_card {
   display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
-  text-align: left;
-  img {
-    margin-right: 20px;
-    width: 70px;
-    height: 70px;
+  text-align: center;
+  position: relative;
+  height: 250px;
+  width: 220px;
+  bottom: 0px;
+  font-family: $header-font;
+  border-radius: 5px;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: bottom .2s ease-in-out;
+
+  &:hover {
+    bottom: 10px;
+
+    .more-information {
+      text-shadow: rgba(241, 127, 57, 0.6) 0px 1px 2px;
+    }
+  }
+
+  .member-name {
+    font-weight: 700;
+    margin-top: 5px;
+  }
+
+  .member-detail {
+    margin-top: 10px;
+  }
+
+  .more-information {
+    color: $orange;
+    text-decoration: none;
+    text-shadow: none;
+    transition: text-shadow .2s ease-in-out;
   }
 }

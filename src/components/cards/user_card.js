@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { browserHistory } from 'react-router';
-import Ink from 'react-ink';
 
 class UserCard extends Component {
 
@@ -12,13 +11,13 @@ class UserCard extends Component {
           browserHistory.push(routeStr);
         }
       }>
-        <Ink />
+      <div>
+        <img className="rounded large" src={this.props.member.photoUrl} alt="profile" />
+          <h4 className="member-name"> {this.props.member.fullName} </h4>
+          <p className="member-detail">Developer</p>
+      </div>
         <div>
-          <img className="rounded" src={this.props.member.photoUrl} alt="profile" />
-        </div>
-        <div>
-          <h4 id="title"> {this.props.member.fullName} </h4>
-          <p id="detail"> {this.props.member.skills.join(' - ')} </p>
+          <a className="more-information" href="#">view profile</a>
         </div>
       </div>
     );

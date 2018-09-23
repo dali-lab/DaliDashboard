@@ -27,8 +27,8 @@ html {
 }
 
 body {
-  font-family: "Roboto", sans-serif;
-  color: $title-color;
+  font-family: $body-font;
+  color: $dark-gray;
   background: 'white';
 
   h1 { font-size: 70px; }
@@ -53,19 +53,20 @@ body {
   }
 
   #title {
+    font-size: 22px;
     font-weight: 400;
-    text-align: left;
+    text-align: center;
   }
 
   #subtitle {
-    color: $subtitle-color;
+    color: $light-gray;
     text-transform: none;
     text-align: left;
   }
 
   #detail {
     font-size: 12px;
-    color: $title-color;
+    color: $dark-gray;
   }
 
   .bold {
@@ -75,12 +76,17 @@ body {
   ul {
     padding-left: 0px;
     margin-bottom: 0px;
-  }
+  } 
 
   .rounded {
     border-radius: 50%;
     object-fit: cover;
     background-size: contain;
+  }
+
+  .large {
+    height: 100px;
+    width: 100px;
   }
 
   .medium {

@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:400,900');
+@import url('https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700');
 
 // Material Color Pallette
 $mat-blue: #1FBCD2;
@@ -6,5 +8,11 @@ $mat-purple: #9575CD;
 $mat-orange: #FF9E00;
 
 // Text color pallette
-$title-color: #424242;
-$subtitle-color: #A3A1A1;
+$dark-gray: #333333;
+$light-gray: #4F4F4F;
+$orange: #F07021;
+$blue: #58AADA;
+
+// Fonts
+$header-font: 'Lato', sans-serif;
+$body-font: 'Roboto', sans-serif;
