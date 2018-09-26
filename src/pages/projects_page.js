@@ -4,7 +4,6 @@ import { Grid, Row, Col } from 'react-flexbox-grid';
 import axios from 'axios';
 import env from '../components/environment';
 
-const serverURL = 'https://dalilab-api.herokuapp.com';
 class Projects extends React.Component {
   constructor(props) {
     console.log('constructing....');
@@ -22,7 +21,7 @@ class Projects extends React.Component {
 
   getProjects() {
     return new Promise((resolve, reject) => {
-      axios.get(`${serverURL}/api/projects`, {
+      axios.get(`${env.serverURL}/api/projects`, {
         headers: { authorization: window.localStorage.token },
       }).then((response) => {
         console.log('succeeded? ', response);
