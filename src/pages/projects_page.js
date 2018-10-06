@@ -34,9 +34,10 @@ class Projects extends React.Component {
   render() {
     const displayedProjects = [[850, 300], [350, 750], [400, 400], [400, 400]].map((item) => {
       return (
-        <div className="grid-item" style={{ width: item[0], height: item[1], marginBottom: '50px' }}>
-          {item[0]} - testing
-        </div>
+        // <div className="grid-item" style={{ width: item[0], height: item[1], marginBottom: '50px' }}>
+        //   {item[0]} - testing
+        // </div>
+        <ProjectCard project={item.toString()} width={item[0]} height={item[1]} />
       );
     });
     // const displayedProjects = this.state.projects.map((project) => {

@@ -1,19 +1,22 @@
 .project_card {
   #top {
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
     padding: 25px;
     color: white;
-    background-color: $mat-purple;
     p {
       font-size: 14px;
       margin-top: 15px;
     }
   }
   #bottom {
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
     padding: 25px 25px 10px 25px;
-    color: $dark-gray;
-    background-color: white;
-
-    p {
+    
+    h3 {
+      color: white;
+      font-weight: 600;
       margin-bottom: 15px;
     }
 
@@ -38,3 +41,26 @@
     }
   }
 }
+
+.grid-item {
+    float: left;
+    position: relative;
+    width: 100px;
+    height: 100px;
+    background: #ccc;
+    border-radius: 15px;
+    border-color: hsla(0, 0%, 0%, 0.7);
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+    margin-bottom: 50px;
+    cursor: pointer;
+    transition: all .2s ease-in-out;
+
+    &:hover {
+      bottom: 10px;
+      box-shadow: 0px 15px 40px rgba(0, 0, 0, 0.2);
+
+      .more-information {
+        text-shadow: rgba(241, 127, 57, 0.6) 0px 1px 2px;
+      }
+    }
+  }
