@@ -22,13 +22,13 @@ class ProjectCard extends Component {
         <Link to={`/projects/${this.props.project.id}`} className="link">
           <div className="mask"/>
           <div id="top">
-            <h4>{this.formatTitle('College Pulse')}</h4>
-            {/* <h4>{this.props.project.title}</h4>
-            <p>{this.props.project.techStack}</p> */}
+            {/* <h4>{this.formatTitle('College Pulse')}</h4> */}
+            <h4>{this.formatTitle(this.props.project.title)}</h4>
+            {/* <p>{this.props.project.techStack}</p> */}
           </div>
           <div id="bottom">
-            {/* <h3>{this.props.project.shortDescription}</h3> */}
-            <h3>Gauging public opinion on college campuses</h3>
+            <h3>{this.props.project.shortDescription}</h3>
+            {/* <h3>Gauging public opinion on college campuses</h3> */}
             {/* <ProjectUserList members={this.props.project.members} /> */}
           </div>
         </Link>

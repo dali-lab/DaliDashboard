@@ -41,19 +41,19 @@ class Projects extends React.Component {
   }
   render() {
     this.initializeGrid();
-    const displayedProjects = ['med-width', 'long-height', 'block', 'block', 'long-width'].map((item) => {
-      return (
-        <ProjectCard project={item.toString()} blockSize={item} />
-      );
-    });
-    
-    // const displayedProjects = this.state.projects.map((project) => {
+    // const displayedProjects = ['med-width', 'long-height', 'block', 'block', 'long-width'].map((item) => {
     //   return (
-    //     <div id={project.id} className="grid-item">
-    //       <ProjectCard project={project} />
-    //     </div>
+    //     <ProjectCard project={item.toString()} blockSize={item} />
     //   );
     // });
+    
+    const displayedProjects = this.state.projects.map((project) => {
+      return (
+        <div id={project.id}>
+          <ProjectCard project={project} blockSize={'long-width'}/>
+        </div>
+      );
+    });
 
       return (
         <div className="grid" data-isotope='{ "itemSelector": ".grid-item", "masonry": { "columnWidth": 400, "gutter": 50 } }'>
