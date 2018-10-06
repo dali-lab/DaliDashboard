@@ -1,5 +1,6 @@
 .project_card {
   #top {
+    display: inline;
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
     padding: 25px;
@@ -8,16 +9,26 @@
       font-size: 14px;
       margin-top: 15px;
     }
+
+    h4 {
+      text-transform: uppercase;
+      padding: 0px 20px;
+    }
   }
   #bottom {
+    position: absolute;
     border-bottom-left-radius: 15px;
     border-bottom-right-radius: 15px;
     padding: 25px 25px 10px 25px;
-    
+    bottom: 10px;
+
     h3 {
+      font-family: $project-header-font;
       color: white;
       font-weight: 600;
       margin-bottom: 15px;
+      font-size: 48px;
+      margin: 0;
     }
 
     ul {
@@ -68,22 +79,26 @@
 .med-width {
   width: 100%;
   max-width: 850px;
-  height: 300px;
+  height: 350px;
 }
 
 .long-width {
   width: 100%;
-  max-width: 1250px;
-  height: 300px;
+  max-width: 1400px;
+  height: 350px;
 }
 
 .long-height {
-  width: 350px;
+  width: 400px;
   height: 100%;
   max-height: 750px;
+
+  #bottom {
+    bottom: 30%;
+  }
 }
 
 .block {
   width: 400px;
-  height: 400px;
+  height: 350px;
 }

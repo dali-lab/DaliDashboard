@@ -46,6 +46,7 @@ class Projects extends React.Component {
         <ProjectCard project={item.toString()} blockSize={item} />
       );
     });
+    
     // const displayedProjects = this.state.projects.map((project) => {
     //   return (
     //     <div id={project.id} className="grid-item">
@@ -55,7 +56,7 @@ class Projects extends React.Component {
     // });
 
       return (
-        <div className="grid" style={{ width: '1400px', maxWidth: '1400px' }} data-isotope='{ "itemSelector": ".grid-item", "masonry": { "columnWidth": 400, "gutter": 50, "fitWidth": true } }'>
+        <div className="grid" data-isotope='{ "itemSelector": ".grid-item", "masonry": { "columnWidth": 500, "gutter": 50, "fitWidth": true } }'>
           {displayedProjects}
         </div>
         // <Grid fluid>

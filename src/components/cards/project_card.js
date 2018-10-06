@@ -8,13 +8,14 @@ class ProjectCard extends Component {
       <div className={`project_card grid-item ${this.props.blockSize}`} style={{ textDecoration: 'none', width: this.props.width, height: this.props.height }}>
         <Link to={`/projects/${this.props.project.id}`} className="link">
           <div id="top">
-            <h4>{this.props.project.title}</h4>
-            <p>{this.props.project.techStack}</p>
+          <h4>College Pulse</h4>
+            {/* <h4>{this.props.project.title}</h4>
+            <p>{this.props.project.techStack}</p> */}
           </div>
         </Link>
         <div id="bottom">
           {/* <h3>{this.props.project.shortDescription}</h3> */}
-          <h3>Capturing Eyes</h3>
+          <h3>Gauging public opinion on college campuses</h3>
           {/* <ProjectUserList members={this.props.project.members} /> */}
         </div>
       </div>
