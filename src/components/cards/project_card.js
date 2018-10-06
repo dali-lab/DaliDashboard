@@ -24,7 +24,7 @@ class ProjectCard extends Component {
         <Link to={`/projects/${this.props.project.id}`} className="link">
           <div className="mask"/>
           <div id="top">
-            {/* <h4>{this.formatTitle('College Pulse')}</h4> */}
+            {/* Project image must have a 1:1 ratio */}
             <img className="project-image" src="https://collegepulse.com/img/logo.png" />
             <h4>{this.formatTitle(this.props.project.title)}</h4>
             {/* <p>{this.props.project.techStack}</p> */}
