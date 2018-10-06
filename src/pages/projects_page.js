@@ -18,21 +18,7 @@ class Projects extends React.Component {
     });
   }
 
-  getProjects() {
-    return new Promise((resolve, reject) => {
-      axios.get(`${env.serverURL}/api/projects`, {
-        headers: { authorization: window.localStorage.token },
-      }).then((response) => {
-        resolve(response.data);
-      });
-    });
-  }
-
-  // [850, 300] - med-width
-  // [350, 750] - long-height
-  // [400, 400] - block
-  // [1250, 300] - long-width
-  render() {
+  initializeGrid() {
     let grid = document.querySelector('.grid');
     let iso = new Isotope(grid, {
       itemSelector: '.grid-item',
@@ -42,11 +28,21 @@ class Projects extends React.Component {
         fitWidth: true
       }
     })
+  }
+
+  getProjects() {
+    return new Promise((resolve, reject) => {
+      axios.get(`${env.serverURL}/api/projects`, {
+        headers: { authorization: window.localStorage.token },
+      }).then((response) => {
+        resolve(response.data);
+      });
+    });
+  }
+  render() {
+    this.initializeGrid();
     const displayedProjects = ['med-width', 'long-height', 'block', 'block', 'long-width'].map((item) => {
       return (
-        // <div className="grid-item" style={{ width: item[0], height: item[1], marginBottom: '50px' }}>
-        //   {item[0]} - testing
-        // </div>
         <ProjectCard project={item.toString()} blockSize={item} />
       );
     });
