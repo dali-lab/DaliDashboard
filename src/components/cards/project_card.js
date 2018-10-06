@@ -31,7 +31,6 @@ class ProjectCard extends Component {
           </div>
           <div id="bottom">
             <h3>{this.props.project.shortDescription}</h3>
-            {/* <h3>Gauging public opinion on college campuses</h3> */}
             {/* <ProjectUserList members={this.props.project.members} /> */}
           </div>
         </Link>
