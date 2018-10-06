@@ -28,16 +28,26 @@ class Projects extends React.Component {
     });
   }
 
-  // [850, 300] - long width
-  // [350, 750] - long height
+  // [850, 300] - med-width
+  // [350, 750] - long-height
   // [400, 400] - block
+  // [1250, 300] - long-width
   render() {
-    const displayedProjects = [[850, 300], [350, 750], [400, 400], [400, 400]].map((item) => {
+    let grid = document.querySelector('.grid');
+    let iso = new Isotope(grid, {
+      itemSelector: '.grid-item',
+      masonry: {
+        columnWidth: 400,
+        gutter: 50,
+        fitWidth: true
+      }
+    })
+    const displayedProjects = ['med-width', 'long-height', 'block', 'block', 'long-width'].map((item) => {
       return (
         // <div className="grid-item" style={{ width: item[0], height: item[1], marginBottom: '50px' }}>
         //   {item[0]} - testing
         // </div>
-        <ProjectCard project={item.toString()} width={item[0]} height={item[1]} />
+        <ProjectCard project={item.toString()} blockSize={item} />
       );
     });
     // const displayedProjects = this.state.projects.map((project) => {
@@ -48,21 +58,20 @@ class Projects extends React.Component {
     //   );
     // });
 
-    return (
-      <div className="grid" style={{ width: '1400px', maxWidth: '1400px' }} data-isotope='{ "itemSelector": ".grid-item", "masonry": { "columnWidth": 400, "gutter": 50, "fitWidth": true } }'>
-        {displayedProjects}
-      </div>
-      // <Grid fluid>
-      //   <Col xs={12}>
-      //     <h4> Projects </h4>
-      //   </Col>
-      //   <Row>
-      //     {displayedProjects}
-      //   </Row>
-      // </Grid>
-    );
-  }
-
+      return (
+        <div className="grid" style={{ width: '1400px', maxWidth: '1400px' }} data-isotope='{ "itemSelector": ".grid-item", "masonry": { "columnWidth": 400, "gutter": 50, "fitWidth": true } }'>
+          {displayedProjects}
+        </div>
+        // <Grid fluid>
+        //   <Col xs={12}>
+        //     <h4> Projects </h4>
+        //   </Col>
+        //   <Row>
+        //     {displayedProjects}
+        //   </Row>
+        // </Grid>
+      );
+    }
 }
 
 export default Projects;

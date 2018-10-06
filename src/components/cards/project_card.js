@@ -5,7 +5,7 @@ import { Link } from 'react-router';
 class ProjectCard extends Component {
   render() {
     return (
-      <div className="project_card grid-item" style={{ textDecoration: 'none', width: this.props.width, height: this.props.height }}>
+      <div className={`project_card grid-item ${this.props.blockSize}`} style={{ textDecoration: 'none', width: this.props.width, height: this.props.height }}>
         <Link to={`/projects/${this.props.project.id}`} className="link">
           <div id="top">
             <h4>{this.props.project.title}</h4>

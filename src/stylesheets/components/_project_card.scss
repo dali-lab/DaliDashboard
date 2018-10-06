@@ -63,4 +63,27 @@
         text-shadow: rgba(241, 127, 57, 0.6) 0px 1px 2px;
       }
     }
-  }
+}
+
+.med-width {
+  width: 100%;
+  max-width: 850px;
+  height: 300px;
+}
+
+.long-width {
+  width: 100%;
+  max-width: 1250px;
+  height: 300px;
+}
+
+.long-height {
+  width: 350px;
+  height: 100%;
+  max-height: 750px;
+}
+
+.block {
+  width: 400px;
+  height: 400px;
+}
