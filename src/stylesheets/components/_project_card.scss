@@ -1,9 +1,17 @@
 .project_card {
+  .mask {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+    background-color: rgba(0, 0, 0, 0.3);
+  }
   #top {
+    position: absolute;
     display: inline;
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
-    padding: 25px;
+    padding-top: 25px;
     color: white;
     p {
       font-size: 14px;

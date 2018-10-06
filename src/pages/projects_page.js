@@ -59,14 +59,6 @@ class Projects extends React.Component {
         <div className="grid" data-isotope='{ "itemSelector": ".grid-item", "masonry": { "columnWidth": 400, "gutter": 50 } }'>
           {displayedProjects}
         </div>
-        // <Grid fluid>
-        //   <Col xs={12}>
-        //     <h4> Projects </h4>
-        //   </Col>
-        //   <Row>
-        //     {displayedProjects}
-        //   </Row>
-        // </Grid>
       );
     }
 }
