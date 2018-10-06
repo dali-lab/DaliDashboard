@@ -25,6 +25,7 @@ class ProjectCard extends Component {
           <div className="mask"/>
           <div id="top">
             {/* <h4>{this.formatTitle('College Pulse')}</h4> */}
+            <img className="project-image" src="https://collegepulse.com/img/logo.png" />
             <h4>{this.formatTitle(this.props.project.title)}</h4>
             {/* <p>{this.props.project.techStack}</p> */}
           </div>
