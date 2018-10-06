@@ -20,12 +20,12 @@ class Projects extends React.Component {
 
   initializeGrid() {
     let grid = document.querySelector('.grid');
-    let iso = new Isotope(grid, {
+    new Isotope(grid, {
       itemSelector: '.grid-item',
       masonry: {
         columnWidth: 400,
         gutter: 50,
-        fitWidth: true
+        // fitWidth: true
       }
     })
   }
@@ -56,7 +56,7 @@ class Projects extends React.Component {
     // });
 
       return (
-        <div className="grid" data-isotope='{ "itemSelector": ".grid-item", "masonry": { "columnWidth": 500, "gutter": 50, "fitWidth": true } }'>
+        <div className="grid" data-isotope='{ "itemSelector": ".grid-item", "masonry": { "columnWidth": 400, "gutter": 50 } }'>
           {displayedProjects}
         </div>
         // <Grid fluid>
