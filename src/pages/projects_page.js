@@ -1,6 +1,7 @@
 import React from 'react';
 import ProjectCard from '../components/cards/project_card';
 import { Grid, Row, Col } from 'react-flexbox-grid';
+import Isotope from 'isotope-layout';
 import axios from 'axios';
 import env from '../components/environment';
 
@@ -28,23 +29,33 @@ class Projects extends React.Component {
   }
 
   render() {
-    const displayedProjects = this.state.projects.map((project) => {
+    const displayedProjects = [[850, 300], [350, 750], [400, 400], [400, 400]].map((item) => {
       return (
-        <Col xs={12} sm={6} md={4} key={project.id}>
-          <ProjectCard project={project} />
-        </Col>
+        <div className="grid-item" style={{ width: item[0], height: item[1], marginBottom: '50px' }}>
+          {item[0]} - testing
+        </div>
       );
     });
+    // const displayedProjects = this.state.projects.map((project) => {
+    //   return (
+    //     <div id={project.id} className="grid-item">
+    //       <ProjectCard project={project} />
+    //     </div>
+    //   );
+    // });
 
     return (
-      <Grid fluid>
-        <Col xs={12}>
-          <h4> Projects </h4>
-        </Col>
-        <Row>
-          {displayedProjects}
-        </Row>
-      </Grid>
+      <div className="grid" style={{ width: '1400px', maxWidth: '1400px' }} data-isotope='{ "itemSelector": ".grid-item", "masonry": { "columnWidth": 400, "gutter": 50, "fitWidth": true } }'>
+        {displayedProjects}
+      </div>
+      // <Grid fluid>
+      //   <Col xs={12}>
+      //     <h4> Projects </h4>
+      //   </Col>
+      //   <Row>
+      //     {displayedProjects}
+      //   </Row>
+      // </Grid>
     );
   }
 

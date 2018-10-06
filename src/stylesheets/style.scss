@@ -102,4 +102,13 @@ body {
   .flex {
     display: flex;
   }
+
+  .grid-item {
+    float: left;
+    width: 100px;
+    height: 100px;
+    background: #0D8;
+    border: 2px solid #333;
+    border-color: hsla(0, 0%, 0%, 0.7);
+  }
 }
