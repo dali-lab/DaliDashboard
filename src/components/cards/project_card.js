@@ -9,9 +9,9 @@ class ProjectCard extends Component {
     splitTitle.forEach((word, index) => {
       console.log(word);
       if (index % 2 == 0) {
-        finalFormat.push(`${word} `);
+        finalFormat.push(<span className="light">{word} </span>);
       } else {
-      finalFormat.push(<span className="semi-bold">{word}</span>)
+      finalFormat.push(<span className="semi-bold">{word} </span>)
       }
     })
     return finalFormat;
