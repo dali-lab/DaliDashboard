@@ -7,7 +7,6 @@ class ProjectCard extends Component {
     const splitTitle = title.split(' ');
     let finalFormat = [];
     splitTitle.forEach((word, index) => {
-      console.log(word);
       if (index % 2 == 0) {
         finalFormat.push(<span className="light">{word} </span>);
       } else {
@@ -17,8 +16,11 @@ class ProjectCard extends Component {
     return finalFormat;
   }
   render() {
+    console.log(this.props.project);
     return (
-      <div className={`project_card grid-item ${this.props.blockSize}`} style={{ textDecoration: 'none', width: this.props.width, height: this.props.height }}>
+      <div className={`project_card grid-item ${this.props.blockSize}`} style={{
+        backgroundRepeat: 'no-repeat', backgroundSize: 'cover',
+        backgroundImage: "url('https://news.dartmouth.edu/sites/dart_news.prod/files/styles/slide/public/news/images/pulse_app_028-810.jpg?itok=nr8SYcKN')", textDecoration: 'none', width: this.props.width, height: this.props.height }}>
         <Link to={`/projects/${this.props.project.id}`} className="link">
           <div className="mask"/>
           <div id="top">
