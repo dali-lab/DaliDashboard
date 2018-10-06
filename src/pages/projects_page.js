@@ -28,6 +28,9 @@ class Projects extends React.Component {
     });
   }
 
+  // [850, 300] - long width
+  // [350, 750] - long height
+  // [400, 400] - block
   render() {
     const displayedProjects = [[850, 300], [350, 750], [400, 400], [400, 400]].map((item) => {
       return (
