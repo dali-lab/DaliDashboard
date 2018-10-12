@@ -30,7 +30,7 @@ class ProjectCard extends Component {
             {/* <p>{this.props.project.techStack}</p> */}
           </div>
           <div id="bottom">
-            <h3>{this.props.project.shortDescription} </h3>
+            <h3>{this.props.project.shortDescription}</h3>
             {/* <ProjectUserList members={this.props.project.members} /> */}
           </div>
         </Link>
