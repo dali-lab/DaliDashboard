@@ -1,9 +1,9 @@
 import React from 'react';
-import ProjectCard from '../components/cards/project_card';
 import { Grid, Row, Col } from 'react-flexbox-grid';
 import Isotope from 'isotope-layout';
 import axios from 'axios';
 import env from '../components/environment';
+import ProjectCard from '../components/cards/project_card';
 
 class Projects extends React.Component {
   constructor(props) {
