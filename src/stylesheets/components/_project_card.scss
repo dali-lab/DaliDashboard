@@ -1,20 +1,48 @@
 .project_card {
+  font-family: $project-header-font;
+  .mask {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+    background-color: $transparent-black;
+  }
   #top {
-    padding: 25px;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    padding-top: 25px;
     color: white;
-    background-color: $mat-purple;
     p {
       font-size: 14px;
       margin-top: 15px;
     }
+
+    h4 {
+      text-transform: uppercase;
+      padding: 0px 5px;
+    }
+
+    .project-image {
+      height: 60px;
+      padding-left: 20px;
+    }
   }
   #bottom {
+    position: absolute;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
     padding: 25px 25px 10px 25px;
-    color: $dark-gray;
-    background-color: white;
+    bottom: 10px;
 
-    p {
+    h3 {
+      color: white;
+      font-weight: 600;
       margin-bottom: 15px;
+      font-size: 48px;
+      margin: 0;
     }
 
     ul {
@@ -37,4 +65,54 @@
       height: 30px;
     }
   }
+}
+
+.grid-item {
+    float: left;
+    position: relative;
+    border-radius: 15px;
+    box-shadow: $shadow;
+    margin-bottom: 50px;
+    bottom: 0;
+    cursor: pointer;
+    transition: all .2s ease-in-out;
+
+    &:hover {
+      bottom: 10px;
+      box-shadow: $shadow-hover;
+      .more-information {
+        text-shadow: rgba(241, 127, 57, 0.6) 0px 1px 2px;
+      }
+    }
+}
+
+.med-width {
+  width: 100%;
+  max-width: 850px;
+  height: 350px;
+}
+
+.long-width {
+  width: 100%;
+  max-width: 1300px;
+  height: 350px;
+
+  #bottom {
+    bottom: 10%;
+  }
+}
+
+.long-height {
+  width: 400px;
+  height: 100%;
+  max-height: 750px;
+
+  #bottom {
+    bottom: 30%;
+  }
+}
+
+.block {
+  width: 400px;
+  height: 350px;
 }

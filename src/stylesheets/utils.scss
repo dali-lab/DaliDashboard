@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Lato:400,900');
 @import url('https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700');
+@import url('https://fonts.googleapis.com/css?family=Poppins:300,400,600,700');
 
 // Material Color Pallette
 $mat-blue: #1FBCD2;
@@ -8,11 +9,17 @@ $mat-purple: #9575CD;
 $mat-orange: #FF9E00;
 
 // Text color pallette
+$transparent-black: rgba(0, 0, 0, 0.3);
 $dark-gray: #333333;
 $light-gray: #4F4F4F;
 $orange: #F07021;
 $blue: #58AADA;
 
+// Shadow
+$shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+$shadow-hover: 0px 15px 40px rgba(0, 0, 0, 0.2);
+
 // Fonts
 $header-font: 'Lato', sans-serif;
 $body-font: 'Roboto', sans-serif;
+$project-header-font: 'Poppins', sans-serif;
