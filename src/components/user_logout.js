@@ -50,14 +50,14 @@ class UserLogout extends Component {
         if (this.state.showMenu) {
             return (
                 <div className="me-menu">
-                <div className="me-menu-header">
-                    <img className="rounded medium" src={this.state.user.photoUrl} alt="profile" />
-                    <h4 className="me-title">{this.state.user.fullName}</h4>
-                </div>
-                <div className="me-menu-body">
-                    <span className="me-menu-option"><a className="profile" href="#">view profile</a></span>
-                    <span className="me-menu-option logout" onClick={this.props.logout}>logout</span>
-                </div>
+                    <div className="me-menu-header">
+                        <img className="rounded medium" src={this.state.user.photoUrl} alt="profile" />
+                        <h4 className="me-title">{this.state.user.fullName}</h4>
+                    </div>
+                    <div className="me-menu-body">
+                        <span className="me-menu-option"><a className="profile" href="#">view profile</a></span>
+                        <span className="me-menu-option logout" onClick={this.props.logout}>logout</span>
+                    </div>
                 </div>
             )
         } else {

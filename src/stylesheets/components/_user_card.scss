@@ -10,12 +10,13 @@
   bottom: 0px;
   font-family: $header-font;
   border-radius: 5px;
-  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+  box-shadow: $shadow;
   cursor: pointer;
-  transition: bottom .2s ease-in-out;
+  transition: all .2s ease-in-out;
 
   &:hover {
     bottom: 10px;
+    box-shadow: $shadow-hover;
 
     .more-information {
       text-shadow: rgba(241, 127, 57, 0.6) 0px 1px 2px;
